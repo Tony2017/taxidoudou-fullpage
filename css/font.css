@@ -1,0 +1,47 @@
+/****** FONTS ******/
+@font-face {
+  font-family: "Lato Black";
+  font-style: normal;
+  src: local("Lato Black"), local("Lato-Black"), url("http://fonts.gstatic.com/s/lato/v11/FwqtLrCC0_ISf339uHkSZw.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato Bold";
+  font-style: normal;
+
+  src: local("Lato Bold"), local("Lato-Bold"), url("http://fonts.gstatic.com/s/lato/v11/7nLfsQCzhQW_PwpkrwroYw.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato Hairdline";
+  font-style: normal;
+  src: local("Lato Hairline"), local("Lato-Hairline"), url("http://fonts.gstatic.com/s/lato/v11/EmdRYgqi59GBCWIJCjGf5Q.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lato Light";
+  font-style: normal;
+
+  src: local("Lato Light"), local("Lato-Light"), url("http://fonts.gstatic.com/s/lato/v11/2hXzmNaFRuKTSBR9nRGO-A.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+
+  src: local("PT Sans"), local("PTSans-Regular"), url("http://fonts.gstatic.com/s/ptsans/v8/ATKpv8nLYAKUYexo8iqqrg.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+  font-style: normal;
+
+  src: local("PT Sans Bold"), local("PTSans-Bold"), url("http://fonts.gstatic.com/s/ptsans/v8/0XxGQsSc1g4rdRdjJKZrNPk_vArhqVIZ0nv9q090hN8.woff2") format("woff2");
+}
+
+body{
+  font-family: "PT Sans", sans-serif;
+}
+
+/**
+--END-- FONTS --END-- **/
