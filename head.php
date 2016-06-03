@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
