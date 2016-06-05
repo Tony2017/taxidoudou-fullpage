@@ -11,7 +11,7 @@
 			<div class="box">
 				<div class="flaticon-24-hour-service"></div>
 				
-				<p>Taxis disponibles 24 heure sur 24 et 7 jours sur 7<br />Disponible en tout temps</p>
+				<p>Taxis disponibles 24 heures sur 24 et 7 jours sur 7<br />Disponible en tout temps</p>
 			</div>
 		</section>
 	</div>
