@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 03/06/2016 17:27
+  	Creation date: 26/06/2016 16:57
   	*/
 
 @font-face {
@@ -24,15 +24,19 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size: 5em;
+        font-size: 50px;
 font-style: normal;
+margin-right: 5px;
 margin-left: 20px;
 }
 
 .flaticon-24-hour-service:before { content: "\f100"; }
-.flaticon-24-hours-open:before { content: "\f101"; }
-.flaticon-airplane-shape:before { content: "\f102"; }
-.flaticon-frontal-taxi-cab:before { content: "\f103"; }
-.flaticon-minibus:before { content: "\f104"; }
-.flaticon-percentage:before { content: "\f105"; }
-.flaticon-trailer:before { content: "\f106"; }
+.flaticon-airplane-shape:before { content: "\f101"; }
+.flaticon-calendar:before { content: "\f102"; }
+.flaticon-facebook-logo:before { content: "\f103"; }
+.flaticon-frontal-taxi-cab:before { content: "\f104"; }
+.flaticon-location-pin:before { content: "\f105"; }
+.flaticon-minibus:before { content: "\f106"; }
+.flaticon-percentage:before { content: "\f107"; }
+.flaticon-phone-receiver:before { content: "\f108"; }
+.flaticon-trailer:before { content: "\f109"; }

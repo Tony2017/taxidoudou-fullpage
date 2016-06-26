@@ -1,20 +1,23 @@
 /* Style for our header texts
 * --------------------------------------- */
-h1{
-	font-size: 5em;
-	font-family: arial,helvetica;
-	color: #fff;
-	margin:0;
+*{
+	font-family: 'Lato', sans-serif;
 }
+
 .intro p{
 	color: #fff;
+}
+
+#topNav{
+	
 }
 
 /* Centered texts in each section
 * --------------------------------------- */
 .section{
-	text-align:center;
+	/*text-align:center;*/
 }
+
 
 /* Overwriting styles for control arrows for slides
 * --------------------------------------- */
@@ -47,13 +50,96 @@ h1{
 #section1, #section2, #section3{
 	color: white;
 }
-/*#section1{
-	background: url("img/city-cars-traffic-lights.jpeg") no-repeat fixed;
+
+
+/* irst section components style
+* --------------------------------------- */
+#section1{
+	background: url("img/city-cars-traffic-lights.jpg") no-repeat fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-}*/
+    height: 40vh;
+}
+
+
+#subnav{
+	display: block;
+	background-color: white;
+	width: 100%;
+	position: fixed;
+	top: 70px;
+	padding: 4vh;
+}
+
+#subnav h4{
+	display: inline-block;
+	color: #8f8f8f;
+	font-size: 2.6vh;
+	vertical-align: middle;
+}
+
+#subnav .flaticon{
+	color: #DB281C;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#where_go{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#subnav .subtitle{
+	text-align: center;
+}
+
+#section1 h1{
+	font-family: "Lato Black",sans-serif;
+	margin: 0;
+	font-size: 15vh;
+	line-height: 1;
+	letter-spacing: -2px;
+	color: #000;
+}
+
+#section1 h3{
+	color: #000;
+	font-size: 3vh;
+}
+#section1 input{
+	min-height: 50px;
+	border-right: none;
+}
+
+#section1 .addon{
+	background-color: white !important;
+	border-left: none;
+	font-size: 12px;
+	color: #DB281C;
+	width: 30px;
+}
+
+#section1 .addon span::before{
+	font-size: 20px !important;
+}
+
+#section1 button{
+	width: 100%;
+}
+
+.btn-go{
+	background-color: #DB281C;
+	min-height: 50px;
+	padding-right: 0px;
+}
+
+.form-bg{
+	background-color: #eaeaea;
+	padding: 1vh;
+	display: inline-block;
+}
 
 .box{
 	border: 1px;

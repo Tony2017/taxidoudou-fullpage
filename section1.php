@@ -1,22 +1,49 @@
 <div class="section" id="section1">
-	<div class="col-md-12 titles-container">
-		<div><img src="css/img/good_2.png" alt="Service de qualité"></img><h4>Service de qualité</h4></div>
-		<h1>Taxi Doudou</h1>
-		<h3>Commander un taxi <br />rapidement et simplement</h3>		
+	<div id="subnav">
+		<div class="container">
+			<div class="col-md-3">
+				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Simple et rapide</h4>
+			</div>
+			<div class="col-md-5" id="where_go">
+				<div class="flaticon-location-pin flaticon"></div>
+				<h4 class="subtitle">Où voulez-vous aller ?</h4>
+			</div>
+			<div class="col-md-3 subtitle">
+				<div class="flaticon-24-hour-service flaticon"></div><h4 class="subtitle">Service 24H/24</h4>
+			</div>
+		</div>
 	</div>
 
-	<div class="container">
-		<div class="row under-title-catch">
-			<section class="col-md-4">
-				<h3>Transport<br />rapide</h3>
-			</section>
-			<section class="col-md-4">
-				<h3>Service 24H/24</h3>
-				<h3>079 846 29 84</h3>
-			</section>
-			<section class="col-md-4">				
-				<h3>7/7<br />Jours & Nuits</h3>
-			</section>
-		</div>
+
+	<div class="col-md-offset-1 col-md-11 titles-container">
+		<div class="container">
+			<h1>Taxi Doudou</h1>
+			<h3>Choisissez votre destination</h3>
+			<div class="form-inline form-bg col-md-12">
+				<div class="row">
+				  <div class="form-group col-md-6" style="padding-right: 0px;">
+				    <label class="sr-only" for="exampleInputAmount">Endroit où vous voulez aller</label>
+					<div class="input-group col-md-12">
+						<input type="text" class="form-control" id="exampleInputAmount" placeholder="Où voulez-vous aller ?">
+						<div class="input-group-addon addon">
+							<span class="flaticon-location-pin"></span>
+						</div>
+					</div>
+				  </div>
+				  <div class="form-group col-md-5" style="padding-right: 0px;">
+				    <label class="sr-only" for="exampleInputAmount">Véhicule à utiliser</label>
+					<div class="input-group col-md-12">
+						<input type="text" class="form-control" id="exampleInputAmount" placeholder="Véhicule à utiliser">
+						<div class="input-group-addon addon">
+							<span class="flaticon-minibus"></span>
+						</div>
+					</div>
+				  </div>
+				  <div class="search-button col-md-1">
+				  	<button class="btn btn-go" type="button">Go</button>
+				  </div>
+				</div>
+			</div>
+		</div>	
 	</div>
 </div>
