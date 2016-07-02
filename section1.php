@@ -38,7 +38,7 @@
 					<div class="input-group col-md-12" id="input_vehicles">
 						
 						<button type="text" class="form-control" id="vehicles" type="button">
-						Véhicule à utiliser
+						<span class="text">Véhicule à utiliser</span>
 						<div class="addon" style="float: right">
 							<span class="flaticon-minibus"></span>
 						</div>
@@ -53,8 +53,8 @@
 		</div>	
 	</div>
 	<ul class="popup-vehicles deactivated">
-			<li class="title">Véhicules</li>
-			<li class="pop-text"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
-			<li class="pop-text"><span class="flaticon-minibus"></span>Taxi (1 à 4 personnes)</li>
+			<li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>
+			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
+			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>Taxi (1 à 4 personnes)</li>
 		</ul>
 </div>

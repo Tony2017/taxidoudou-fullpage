@@ -200,7 +200,12 @@
 }
 
 .deactivated{
-	display: none;
+	opacity: 0;
+	-webkit-transition: opacity .125s ease-in-out;
+    -moz-transition: opacity .125s ease-in-out;
+    -ms-transition: opacity .125s ease-in-out;
+    -o-transition: opacity .125s ease-in-out;
+    transition: opacity .125s ease-in-out;
 }
 
 #vehicles:focus, #vehicles{
@@ -214,4 +219,11 @@
 	text-align: left;
 	font-size: 18px;
 	color: #999;
+}
+
+#exit_menu::before{
+	font-size: 1.6vh;
+	padding: 0.7vh;
+	float: right;
+	cursor: pointer;
 }

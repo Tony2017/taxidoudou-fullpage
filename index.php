@@ -50,9 +50,36 @@
     		$(".popup-vehicles").removeClass("deactivated");
 
     	});
-    	$("#vehicles").blur(function() {
+    	
+    	$("#taxi_vehicle").click(function() {
+    		$("#vehicles span[class='text']").text("Taxi (1 à 4 places)");
     		$(".popup-vehicles").addClass("deactivated");
-    	});	
+    	});
+
+    	$("#minibus_vehicle").click(function() {
+    		$("#vehicles span[class='text']").text("Minibus (1 à 15 places)");
+    		$(".popup-vehicles").addClass("deactivated");
+    	});
+
+    	$(document).mouseup(function (e)
+		{
+		    var container = $("#vehicle, .popup-vehicles");
+
+		    if (!container.is(e.target) // if the target of the click isn't the container...
+		        && container.has(e.target).length === 0) // ... nor a descendant of the container
+		    {
+		        $(".popup-vehicles").addClass("deactivated");
+
+		    }
+		});
+
+		$("#exit_menu").click(function() {
+			$(".popup-vehicles").addClass("deactivated");
+		});
+
+    	/*$("#vehicles").blur(function() {
+    		
+    	});	*/
   	});
     </script>
 </body>
