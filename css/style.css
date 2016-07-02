@@ -75,7 +75,7 @@
 #subnav h4{
 	display: inline-block;
 	color: #8f8f8f;
-	font-size: 2.6vh;
+	font-size: 2.3vh;
 	vertical-align: middle;
 }
 
@@ -98,7 +98,7 @@
 #section1 h1{
 	font-family: "Lato Black",sans-serif;
 	margin: 0;
-	font-size: 15vh;
+	font-size: 12vh;
 	line-height: 1;
 	letter-spacing: -2px;
 	color: #000;
@@ -108,9 +108,10 @@
 	color: #000;
 	font-size: 3vh;
 }
-#section1 input{
-	min-height: 50px;
+#section1 input, button{
+	min-height: 60px;
 	border-right: none;
+	font-size: 18px;
 }
 
 #section1 .addon{
@@ -119,6 +120,7 @@
 	font-size: 12px;
 	color: #DB281C;
 	width: 30px;
+	margin-right: 20px;
 }
 
 #section1 .addon span::before{
@@ -131,7 +133,7 @@
 
 .btn-go{
 	background-color: #DB281C;
-	min-height: 50px;
+	min-height: 60px;
 	padding-right: 0px;
 }
 
@@ -155,4 +157,61 @@
 }
 .box p{
 	font-size: 1.5em;
+}
+
+.popup-vehicles{
+	position: absolute;
+	left: 150px;
+	top: 250px;
+	overflow: auto;
+	z-index: 10;
+	background-color: #FFF;
+	padding: 0px 0px 0px 0px;
+	padding-left: 0px;
+	margin: 0px;
+	width: 330px;
+}
+
+.popup-vehicles > li{
+	padding: 0px 0px 0px 0px;
+	margin: none;
+	height: 60px;
+}
+
+.popup-vehicles li:not(:first-child):hover{
+	background-color: #f1f1f1;
+	cursor: pointer;
+}
+
+.popup-vehicles > .title{
+	padding: 1.6vh;
+	font-size: 2.4vh;
+	background-color: #e53e33;
+}
+
+.popup-vehicles .pop-text{
+	color: #e53e33;
+}
+
+.popup-vehicles .pop-text span::before{
+	font-size: 4.4vh;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+.deactivated{
+	display: none;
+}
+
+#vehicles:focus, #vehicles{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  border-color: #CCC;
+}
+
+#vehicles{
+	text-align: left;
+	font-size: 18px;
+	color: #999;
 }

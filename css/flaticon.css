@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 26/06/2016 16:57
+  	Creation date: 01/07/2016 22:57
   	*/
 
 @font-face {
@@ -24,19 +24,20 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size: 50px;
+        font-size:  62px;
 font-style: normal;
-margin-right: 5px;
 margin-left: 20px;
+margin-right: 5px;
 }
 
 .flaticon-24-hour-service:before { content: "\f100"; }
 .flaticon-airplane-shape:before { content: "\f101"; }
 .flaticon-calendar:before { content: "\f102"; }
-.flaticon-facebook-logo:before { content: "\f103"; }
-.flaticon-frontal-taxi-cab:before { content: "\f104"; }
-.flaticon-location-pin:before { content: "\f105"; }
-.flaticon-minibus:before { content: "\f106"; }
-.flaticon-percentage:before { content: "\f107"; }
-.flaticon-phone-receiver:before { content: "\f108"; }
-.flaticon-trailer:before { content: "\f109"; }
+.flaticon-close-cross:before { content: "\f103"; }
+.flaticon-facebook-logo:before { content: "\f104"; }
+.flaticon-frontal-taxi-cab:before { content: "\f105"; }
+.flaticon-location-pin:before { content: "\f106"; }
+.flaticon-minibus:before { content: "\f107"; }
+.flaticon-percentage:before { content: "\f108"; }
+.flaticon-phone-receiver:before { content: "\f109"; }
+.flaticon-trailer:before { content: "\f10a"; }

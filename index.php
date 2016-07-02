@@ -39,5 +39,21 @@
         <?php include("section2.php"); ?> 
         <?php include("section3.php"); ?> 
     </section>    
+
+    <script>
+    jQuery(document).ready(function(){
+    	$("#vehicles").click(function() {
+    		var vehicles_left = $("#vehicles").offset().left;
+    		var vehicles_top  = $(".form-inline").offset().top - $(".popup-vehicles").height();
+    		var vehicles_width = $("#input_vehicles").width();
+    		$(".popup-vehicles").css({"left":vehicles_left, "top":vehicles_top, "width":vehicles_width});
+    		$(".popup-vehicles").removeClass("deactivated");
+
+    	});
+    	$("#vehicles").blur(function() {
+    		$(".popup-vehicles").addClass("deactivated");
+    	});	
+  	});
+    </script>
 </body>
 </html>
