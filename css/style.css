@@ -208,7 +208,7 @@
     transition: opacity .125s ease-in-out;
 }
 
-#vehicles:focus, #vehicles{
+#vehicles:focus, #vehicles, #position:focus, #position{
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
