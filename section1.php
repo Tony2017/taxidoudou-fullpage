@@ -16,6 +16,7 @@
 
 
 
+
 	<div class="col-md-offset-1 col-md-11 titles-container">
 		<div class="container">
 			<h1>Taxi Doudou</h1>
@@ -24,7 +25,7 @@
 				<div class="row">
 				  <div class="form-group col-md-7" style="padding-right: 0px;">
 				    <label class="sr-only" for="exampleInputAmount">Endroit où vous voulez aller</label>
-					<div class="input-group col-md-12">
+					<div class="input-group col-md-12" id="input_position">
 						<input type="text" class="form-control" id="position" placeholder="Où voulez-vous aller ?">
 						<div class="input-group-addon addon">
 							<span class="flaticon-location-pin"></span>
@@ -56,5 +57,9 @@
 			<li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>
 			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
 			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>Taxi (1 à 4 personnes)</li>
-		</ul>
+	</ul>
+
+	<ul class="popup-position deactivated">
+	</ul>
+
 </div>

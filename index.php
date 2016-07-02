@@ -42,12 +42,28 @@
 
     <script>
     jQuery(document).ready(function(){
+    	var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
     	$("#vehicles").click(function() {
     		var vehicles_left = $("#vehicles").offset().left;
     		var vehicles_top  = $(".form-inline").offset().top - $(".popup-vehicles").height();
     		var vehicles_width = $("#input_vehicles").width();
     		$(".popup-vehicles").css({"left":vehicles_left, "top":vehicles_top, "width":vehicles_width});
     		$(".popup-vehicles").removeClass("deactivated");
+
+    	});
+
+    	$("#position").click(function() {
+    		var position_left = $("#position").offset().left;
+    		var position_top  = $(".form-inline").offset().top - $(".popup-position").height();
+    		var position_width = $("#input_position").width();
+    		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
+    		$(".popup-position").removeClass("deactivated");
 
     	});
     	
@@ -77,10 +93,20 @@
 			$(".popup-vehicles").addClass("deactivated");
 		});
 
-    	/*$("#vehicles").blur(function() {
-    		
-    	});	*/
+    	$("#position").keyup(function() {
+    		var text = $(this).val();
+    		delay(function(){
+      			$.get("http://localhost:8080/taxidoudou-fullpage/query.php?text=" + text, function(data){
+		    		addEntries(data);
+      			});
+    		}, 300 );
+    	});
   	});
+	
+	function addEntries(data){
+		<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
+	}
+	
     </script>
 </body>
 </html>
