@@ -96,15 +96,30 @@
     	$("#position").keyup(function() {
     		var text = $(this).val();
     		delay(function(){
-      			$.get("http://localhost:8080/taxidoudou-fullpage/query.php?text=" + text, function(data){
-		    		addEntries(data);
-      			});
+    			var m_data;
+    			$.getJSON("http://localhost:8080/taxidoudou-fullpage/query.php?text=" + text, function( data ) {
+    				m_data = data;
+				})
+    			.done(function() {
+    			$( ".popup-position").empty();
+    			var obj = m_data;  			
+    			for(var i in obj){
+					$( ".popup-position").append("<li class=\"pop-text\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
+				}
+				var position_left = $("#position").offset().left;
+	    		var position_top  = $(".form-inline").offset().top - $(".popup-position").height();
+	    		var position_width = $("#input_position").width();
+	    		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
+	    		$(".popup-position").removeClass("deactivated");
+    			})
+    			.fail(function(){
+    				$( ".popup-position").empty();
+    			});
     		}, 300 );
     	});
   	});
 	
 	function addEntries(data){
-		<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
 	}
 	
     </script>
