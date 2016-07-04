@@ -206,6 +206,7 @@
     -ms-transition: opacity .125s ease-in-out;
     -o-transition: opacity .125s ease-in-out;
     transition: opacity .125s ease-in-out;
+    display: none;
 }
 
 #vehicles:focus, #vehicles, #position:focus, #position{

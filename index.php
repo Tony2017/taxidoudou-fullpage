@@ -79,19 +79,28 @@
 
     	$(document).mouseup(function (e)
 		{
-		    var container = $("#vehicle, .popup-vehicles");
+		    var container = $("#vehicle, .popup-vehicles, #position, .popup-position");
 
 		    if (!container.is(e.target) // if the target of the click isn't the container...
 		        && container.has(e.target).length === 0) // ... nor a descendant of the container
 		    {
 		        $(".popup-vehicles").addClass("deactivated");
+                $(".popup-position").addClass("deactivated");
 
 		    }
+
 		});
 
 		$("#exit_menu").click(function() {
 			$(".popup-vehicles").addClass("deactivated");
 		});
+
+
+        $(".popup-position").on("click", "li", function(event){
+            $("#position").val($(this).text());
+            $(".popup-position").addClass("deactivated");
+        });
+
 
     	$("#position").keyup(function() {
     		var text = $(this).val();
