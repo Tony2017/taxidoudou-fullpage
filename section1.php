@@ -11,17 +11,24 @@
 			<div class="col-md-3 subtitle">
 				<div class="flaticon-24-hour-service flaticon"></div><h4 class="subtitle">Service 24H/24</h4>
 			</div>
+			<div class="col-md-3">
+				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Simple et rapide</h4>
+			</div>
+			<div class="col-md-5" id="where_go">
+				<div class="flaticon-location-pin flaticon"></div>
+				<h4 class="subtitle">Dans toute la suisse</h4>
+			</div>
+			<div class="col-md-3 subtitle">
+				<div class="flaticon-24-hour-service flaticon"></div><h4 class="subtitle">Service 24H/24</h4>
+			</div>
 		</div>
 	</div>
-
-
-
 
 	<div class="col-md-offset-1 col-md-11 titles-container">
 		<div class="container">
 			<h1>Taxi Doudou</h1>
-			<h3>Choisissez votre destination</h3>
-			<div class="form-inline form-bg col-md-11">
+			<h3 class="col-md-12 no-padding">Choisissez votre destination</h3>
+			<div class="form-inline form-bg col-md-12">
 				<div class="row">
 				  <div class="form-group col-md-7" style="padding-right: 0px;">
 				    <label class="sr-only" for="exampleInputAmount">Endroit où vous voulez aller</label>
@@ -51,7 +58,14 @@
 				  </div>
 				</div>
 			</div>
+			
 		</div>	
+	</div>
+	<div class="bottom-box col-md-offset-1 col-md-11">
+		<div class="container">
+				<h3 class="no-padding col-md-3">Ou appelez-nous au</h3>
+				<a class="center col-md-3" href="tel:+41798462984">079 846 29 84</a>
+		</div>
 	</div>
 	<ul class="popup-vehicles deactivated">
 			<li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>

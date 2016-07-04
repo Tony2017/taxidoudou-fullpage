@@ -42,13 +42,24 @@
 
     <script>
     jQuery(document).ready(function(){
-    	var delay = (function(){
-  var timer = 0;
-  return function(callback, ms){
-    clearTimeout (timer);
-    timer = setTimeout(callback, ms);
-  };
-})();
+    	
+        var delay = (function(){
+          var timer = 0;
+          return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+          };
+        })();
+
+        $('#subnav .container').slick({
+            dots: false,
+            arrows: false,
+            slidesToShow: 3,
+          slidesToScroll: 3,
+          autoplay: true,
+          autoplaySpeed: 6000,
+        });
+
     	$("#vehicles").click(function() {
     		var vehicles_left = $("#vehicles").offset().left;
     		var vehicles_top  = $(".form-inline").offset().top - $(".popup-vehicles").height();
@@ -100,6 +111,14 @@
             $("#position").val($(this).text());
             $(".popup-position").addClass("deactivated");
         });
+
+
+        
+
+        /*$('#section1').fadeTo('slow', 0.3, function()
+        {
+            
+        }).delay(1000).fadeTo('slow', 1);*/
 
 
     	$("#position").keyup(function() {

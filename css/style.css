@@ -108,6 +108,9 @@
 	color: #000;
 	font-size: 3vh;
 }
+
+
+
 #section1 input, button{
 	min-height: 60px;
 	border-right: none;
@@ -267,4 +270,46 @@
 	font-size: 4.4vh;
 	vertical-align: middle;
 	margin-right: 15px;
+}
+
+.no-padding{
+	padding: 0px 0px 0px 0px !important;
+}
+
+.top-margin{
+	margin-top: 5vh;
+}
+
+.center{
+	text-align: center;
+}
+
+.bottom-box{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bottom-box > .container{
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bottom-box a{
+	color: #E53E33;
+	text-decoration: none;
+	font-size: 3vh;
+	padding: 1.5vh;
+	display: inline-block;
+	vertical-align: middle;
+	margin: auto;
+	font-weight: 600;
+}
+
+.bottom-box a:hover{
+	text-decoration: none;
+	color: #E53E33;
+}
+
+.bottom-box h3{
+	display: inline-block;
+	vertical-align: middle;
 }
