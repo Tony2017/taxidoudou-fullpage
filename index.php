@@ -70,22 +70,28 @@
     	});
 
     	$("#position").click(function() {
+            $(".popup-position").removeClass("fadeIn animated");
+            $(".popup-position").removeClass("fadeOut animated");
     		var position_left = $("#position").offset().left;
     		var position_top  = $(".form-inline").offset().top - $(".popup-position").height();
     		var position_width = $("#input_position").width();
     		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
-    		$(".popup-position").removeClass("deactivated");
-
+    		
+            $(".popup-position").removeClass("deactivated");
     	});
     	
     	$("#taxi_vehicle").click(function() {
     		$("#vehicles span[class='text']").text("Taxi (1 à 4 places)");
+            $(".popup-vehicles").addClass("fadeOut animated");
     		$(".popup-vehicles").addClass("deactivated");
+            $(".popup-vehicles").removeClass("fadeOut animated");
     	});
 
     	$("#minibus_vehicle").click(function() {
     		$("#vehicles span[class='text']").text("Minibus (1 à 15 places)");
-    		$(".popup-vehicles").addClass("deactivated");
+    		$(".popup-vehicles").addClass("fadeOut animated");
+            $(".popup-vehicles").addClass("deactivated");
+            $(".popup-vehicles").removeClass("fadeOut animated");
     	});
 
     	$(document).mouseup(function (e)
@@ -109,6 +115,7 @@
 
         $(".popup-position").on("click", "li", function(event){
             $("#position").val($(this).text());
+            $(".popup-position").addClass("fadeOut animated");
             $(".popup-position").addClass("deactivated");
         });
 
@@ -139,9 +146,13 @@
 	    		var position_width = $("#input_position").width();
 	    		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
 	    		$(".popup-position").removeClass("deactivated");
+                $(".popup-position").removeClass("fadeOut animated");
+                $(".popup-position").addClass("fadeIn animated");
     			})
     			.fail(function(){
     				$( ".popup-position").empty();
+                    $(".popup-position").removeClass("fadeIn animated");
+                    $(".popup-position").addClass("fadeOut animated");
     			});
     		}, 300 );
     	});
