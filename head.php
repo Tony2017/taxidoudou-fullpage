@@ -1,6 +1,6 @@
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Horizontal navigation dots - fullPage.js</title>
+	<title>TaxiDoudou - Taxi Estavayer-le-Lac et environs</title>
 	<meta name="author" content="Alvaro Trigo Lopez" />
 	<meta name="description" content="fullPage full-screen navigation and sections control menu." />
 	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />

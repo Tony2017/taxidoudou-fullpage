@@ -102,11 +102,13 @@
 	line-height: 1;
 	letter-spacing: -2px;
 	color: #000;
+	margin-top: 6vh;
 }
 
 #section1 h3{
 	color: #000;
 	font-size: 3vh;
+	margin: 0px;
 }
 
 
@@ -244,6 +246,7 @@
 	margin: 0px;
 	width: 330px;
 	animation-duration: 0.2s !important;
+	max-height: 400px;
 
 }
 
@@ -286,23 +289,11 @@
 	text-align: center;
 }
 
-.bottom-box{
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.bottom-box > .container{
-	background-color: rgba(255, 255, 255, 0.1);
-}
 
 .bottom-box a{
 	color: #E53E33;
 	text-decoration: none;
 	font-size: 3vh;
-	padding: 1.5vh;
-	display: inline-block;
-	vertical-align: middle;
-	margin: auto;
 	font-weight: 600;
 }
 
@@ -311,7 +302,10 @@
 	color: #E53E33;
 }
 
-.bottom-box h3{
-	display: inline-block;
-	vertical-align: middle;
+
+.postiion-container, .call-container{
+	overflow: auto;
+	padding: 4vh;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin-top:1vh;
 }

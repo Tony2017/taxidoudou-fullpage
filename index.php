@@ -77,19 +77,18 @@
     		var position_width = $("#input_position").width();
     		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
     		
-            $(".popup-position").removeClass("deactivated");
+            if($(".popup-position").has("li").length)
+                $(".popup-position").removeClass("deactivated");
     	});
     	
     	$("#taxi_vehicle").click(function() {
     		$("#vehicles span[class='text']").text("Taxi (1 à 4 places)");
-            $(".popup-vehicles").addClass("fadeOut animated");
     		$(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
     	});
 
     	$("#minibus_vehicle").click(function() {
     		$("#vehicles span[class='text']").text("Minibus (1 à 15 places)");
-    		$(".popup-vehicles").addClass("fadeOut animated");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
     	});
@@ -115,7 +114,6 @@
 
         $(".popup-position").on("click", "li", function(event){
             $("#position").val($(this).text());
-            $(".popup-position").addClass("fadeOut animated");
             $(".popup-position").addClass("deactivated");
         });
 
@@ -152,7 +150,7 @@
     			.fail(function(){
     				$( ".popup-position").empty();
                     $(".popup-position").removeClass("fadeIn animated");
-                    $(".popup-position").addClass("fadeOut animated");
+
     			});
     		}, 300 );
     	});
