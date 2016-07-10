@@ -4,9 +4,6 @@
 	font-family: 'Lato', sans-serif;
 }
 
-.intro p{
-	color: #fff;
-}
 
 #topNav{
 	
@@ -232,7 +229,8 @@
     -ms-transition: opacity .125s ease-in-out;
     -o-transition: opacity .125s ease-in-out;
     transition: opacity .125s ease-in-out;
-    display: none;
+    transition: visibility 0s, opacity 0.125s linear;
+    visible: hidden;
 }
 
 #vehicles:focus, #vehicles, #position:focus, #position{
@@ -366,4 +364,61 @@
 	margin: auto;
 	text-align: center;
 	display: block;
+}
+
+.contact{
+	padding-top: 4vh;
+	color: white;
+	padding: 4vh;
+}
+
+.contact input{
+	height: 48px !important;
+}
+
+.contact textarea{
+	margin-top: 1vh;
+}
+
+.contact a{
+	text-decoration: none;
+	color: white;
+}
+
+.contact a:hover{
+	text-decoration: none;
+	color: #E53E33;
+}
+
+.footer-icon:before{
+	font-size: 28px !important;
+	display: block;
+}
+
+.footer-icon{
+	display: inline-block;
+	margin-right: 12px;
+	vertical-align: middle;
+}
+
+.address p{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 5px;
+}
+
+.address-info{
+	display: block;
+}
+
+.copyright{
+	width: 100%;
+	padding: 4vh;
+	background-color: #E53E33;
+	text-align: right;
+	color: white;
+}
+
+.copyright p{
+	margin: 0px;
 }

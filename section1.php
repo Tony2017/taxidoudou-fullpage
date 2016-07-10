@@ -76,8 +76,8 @@
 	</div>
 	<ul class="popup-vehicles deactivated">
 			<li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>
-			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>TaxiBus (1 à 15 personnes)</li>
-			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>TaxiTouran (1 à 4 personnes)</li>
+			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>TaxiBus (Jusqu'à 15 places)</li>
+			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>TaxiTouran (Jusqu'à 4 places)</li>
 	</ul>
 
 	<ul class="popup-position deactivated">
