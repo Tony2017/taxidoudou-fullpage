@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 09/07/2016 18:06
+  	Creation date: 10/07/2016 11:13
   	*/
 
 @font-face {
@@ -24,10 +24,10 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size:  62px;
-font-style: normal;
-margin-left: 20px;
-margin-right: 5px;
+  font-size:  52px;
+  font-style: normal;
+  margin-left: 20px;
+  margin-right: 5px;
 }
 
 .flaticon-24-hour-service:before { content: "\f100"; }
@@ -40,5 +40,6 @@ margin-right: 5px;
 .flaticon-minibus:before { content: "\f107"; }
 .flaticon-percentage:before { content: "\f108"; }
 .flaticon-phone-receiver:before { content: "\f109"; }
-.flaticon-trailer:before { content: "\f10a"; }
-.flaticon-travel:before { content: "\f10b"; }
+.flaticon-switzerland:before { content: "\f10a"; }
+.flaticon-trailer:before { content: "\f10b"; }
+.flaticon-travel:before { content: "\f10c"; }

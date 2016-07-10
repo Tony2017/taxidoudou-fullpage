@@ -16,7 +16,7 @@
 				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Simple et rapide</h4>
 			</div>
 			<div class="col-md-5" id="where_go">
-				<div class="flaticon-location-pin flaticon"></div>
+				<div class=".flaticon-switzerland flaticon"></div>
 				<h4 class="subtitle">Dans toute la suisse</h4>
 			</div>
 			<div class="col-md-3 subtitle">
