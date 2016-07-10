@@ -87,12 +87,11 @@
 
 #where_go{
 	display: inline-block;
-	text-align: center;
 	vertical-align: middle;
 }
 
 #subnav .subtitle{
-	text-align: center;
+	
 }
 
 #section1 h1{
@@ -230,7 +229,7 @@
     -o-transition: opacity .125s ease-in-out;
     transition: opacity .125s ease-in-out;
     transition: visibility 0s, opacity 0.125s linear;
-    visible: hidden;
+    display: none;
 }
 
 #vehicles:focus, #vehicles, #position:focus, #position{
