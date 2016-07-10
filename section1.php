@@ -15,13 +15,14 @@
 			<div class="col-md-3">
 				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Simple et rapide</h4>
 			</div>
-			<div class="col-md-5" id="where_go">
-				<div class=".flaticon-switzerland flaticon"></div>
-				<h4 class="subtitle">Dans toute la suisse</h4>
-			</div>
 			<div class="col-md-3 subtitle">
 				<div class="flaticon-24-hour-service flaticon"></div><h4 class="subtitle">Service 24H/24</h4>
 			</div>
+			<div class="col-md-5" id="where_go">
+				<div class="flaticon-switzerland flaticon"></div>
+				<h4 class="subtitle">Dans toute la suisse</h4>
+			</div>
+			
 		</div>
 	</div>
 
@@ -75,8 +76,8 @@
 	</div>
 	<ul class="popup-vehicles deactivated">
 			<li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>
-			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>Minibus (1 à 15 personnes)</li>
-			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>Taxi (1 à 4 personnes)</li>
+			<li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>TaxiBus (1 à 15 personnes)</li>
+			<li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>TaxiTouran (1 à 4 personnes)</li>
 	</ul>
 
 	<ul class="popup-position deactivated">

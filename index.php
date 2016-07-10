@@ -130,7 +130,7 @@
     		var text = $(this).val();
     		delay(function(){
     			var m_data;
-    			$.getJSON("http://localhost:8080/taxidoudou-fullpage/query.php?text=" + text, function( data ) {
+    			$.getJSON("query.php?text=" + text, function( data ) {
     				m_data = data;
 				})
     			.done(function() {

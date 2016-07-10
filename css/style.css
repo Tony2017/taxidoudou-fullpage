@@ -47,8 +47,12 @@
     background: white;
 }
 
-#section1, #section2, #section3{
+#section1, #section3{
 	color: white;
+}
+
+#section3{
+	color: black;
 }
 
 
@@ -61,7 +65,6 @@
     background-position: center;
     height: 40vh;
 }
-
 
 #subnav{
 	display: block;
@@ -149,19 +152,37 @@
 }
 
 .box{
-	border: 1px;
-	border-style: solid;
-	border-color: white;
-	height: 20%;
-	margin: 5%;
+	height: 100%;
 	margin-right: 20% ;
 	margin-left: 20%;
-	max-height: 50vh;
-	padding: 10vh;
-	
+	padding: 7vh;
+	overflow: auto;
 }
 .box p{
 	font-size: 1.5em;
+}
+
+.box img{
+	display: inline-block;
+	max-width: 50%;
+	vertical-align: middle;
+}
+
+.box .box-description{
+
+	margin-top: 2vh;
+}
+
+.flat-img{
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+}
+
+.box .flat-img::before{
+	font-size: 20vh;
+	float: right;
+	display: block;
 }
 
 .popup-vehicles{
@@ -308,4 +329,41 @@
 	padding: 4vh;
 	background-color: rgba(255, 255, 255, 0.2);
 	margin-top:1vh;
+}
+
+.vehicle-infolist{
+	display: inline-block;
+	float: right;
+	width: 40%;
+	vertical-align: middle;
+}
+
+.vehicle-infolist h4{
+	font-size: 4.5vh;
+}
+
+.vehicle-infolist .list{
+	padding: 1vh;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.1);
+	overflow: auto;
+	width: 80%;
+}
+
+
+.vehicle-infolist .list p{
+	text-align: center;
+}
+
+.info-element{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.info-element [class^="flaticon-"]:before{
+	margin: auto;
+	text-align: center;
+	display: block;
 }
