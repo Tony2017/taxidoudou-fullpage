@@ -62,7 +62,7 @@
 
     	$("#vehicles").click(function() {
     		var vehicles_left = $("#vehicles").offset().left;
-    		var vehicles_top  = $(".form-inline").offset().top - $(".popup-vehicles").height();
+    		var vehicles_top  = $(".form-bg").offset().top - $(".popup-vehicles").height();
     		var vehicles_width = $("#input_vehicles").width();
     		$(".popup-vehicles").css({"left":vehicles_left, "top":vehicles_top, "width":vehicles_width});
     		$(".popup-vehicles").removeClass("deactivated");
@@ -73,7 +73,7 @@
             $(".popup-position").removeClass("fadeIn animated");
             $(".popup-position").removeClass("fadeOut animated");
     		var position_left = $("#position").offset().left;
-    		var position_top  = $(".form-inline").offset().top - $(".popup-position").height();
+    		var position_top  = $(".form-bg").offset().top - $(".popup-position").height();
     		var position_width = $("#input_position").width();
     		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
     		
@@ -140,7 +140,7 @@
 					$( ".popup-position").append("<li class=\"pop-text\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
 				}
 				var position_left = $("#position").offset().left;
-	    		var position_top  = $(".form-inline").offset().top - $(".popup-position").height();
+	    		var position_top  = $(".form-bg").offset().top - $(".popup-position").height();
 	    		var position_width = $("#input_position").width();
 	    		$(".popup-position").css({"left":position_left, "top":position_top, "width":position_width});
 	    		$(".popup-position").removeClass("deactivated");

@@ -72,6 +72,8 @@
 	padding: 1vh;
 }
 
+
+
 #subnav h4{
 	display: inline-block;
 	color: #8f8f8f;
@@ -83,6 +85,34 @@
 	color: #DB281C;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+@media (max-width: 1280px) {
+	#subnav .flaticon::before{
+		font-size: 7vh;
+	}
+}
+
+@media (max-width: 980px) {
+	#subnav .flaticon::before{
+		font-size: 3.6vh;
+	}
+	#subnav h4{
+		font-size: 1.4vh;
+		display: block;
+		text-align: center;
+	}
+	#subnav .flaticon{
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	#subnav .flaticon::before{
+		display: block;
+		text-align: center;
+		margin: auto;
+		width: 100%;
+	}
 }
 
 #where_go{
@@ -104,6 +134,18 @@
 	margin-top: 6vh;
 }
 
+@media (max-width: 980px) {
+	#section1 h1{
+		font-size: 8vh;
+		margin-top: 0;
+	}
+	.titles-container .container{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
+}
+
 #section1 h3{
 	color: #000;
 	font-size: 3vh;
@@ -116,6 +158,17 @@
 	min-height: 60px;
 	border-right: none;
 	font-size: 18px;
+}
+
+
+
+@media (min-width: 981px){
+	#section1 .form-group{
+		padding-right: 0px;
+	}
+	.form-group{
+		margin-bottom: 0px !important;
+	}
 }
 
 #section1 .addon{
@@ -143,7 +196,7 @@
 
 .form-bg{
 	background-color: #eaeaea;
-	padding: 1vh;
+	padding: 1.2vh;
 	display: inline-block;
 }
 
@@ -272,6 +325,7 @@
 	padding: 0px 0px 0px 0px;
 	margin: none;
 	height: 60px;
+	text-overflow: ellipsis;
 }
 
 .popup-position li:hover{
@@ -294,6 +348,25 @@
 	vertical-align: middle;
 	margin-right: 15px;
 }
+
+@media (max-width: 980px){
+	.popup-vehicles > .title{
+		padding: 1vh;
+	}
+
+	.popup-vehicles > li{
+		height: 100px;
+		font-size: 1.5vh;
+	}
+
+	.popup-position > li{
+		height: 100px;
+		font-size: 1.7vh;
+		vertical-align: middle;
+	}
+
+}
+
 
 .no-padding{
 	padding: 0px 0px 0px 0px !important;
