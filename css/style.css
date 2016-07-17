@@ -139,11 +139,12 @@
 		font-size: 8vh;
 		margin-top: 0;
 	}
-	.titles-container .container{
+	.titles-container .container, .bottom-box .container{
 		padding: 0;
 		margin: 0;
 		width: 100%;
 	}
+
 }
 
 #section1 h3{
@@ -218,7 +219,6 @@
 }
 
 .box .box-description{
-
 	margin-top: 2vh;
 }
 
@@ -228,10 +228,77 @@
 	width: 50%;
 }
 
+
+.vehicle-infolist{
+	display: inline-block;
+	float: right;
+	width: 40%;
+	vertical-align: middle;
+}
+
+.vehicle-infolist h4{
+	font-size: 4.5vh;
+}
+
+.vehicle-infolist .list{
+	padding: 1vh;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.1);
+	overflow: auto;
+	width: 80%;
+}
+
+
+.vehicle-infolist .list p{
+	text-align: center;
+}
+
 .box .flat-img::before{
 	font-size: 20vh;
 	float: right;
 	display: block;
+}
+
+@media (max-width: 980px) {
+	.box{
+		padding: 0;
+	}
+	.box img{
+		display: block;
+		max-width: 100%;
+	}
+	.box .box-description{
+		display: block;
+		width: 100%;
+	}
+
+	.vehicle-infolist{
+		display: block;
+		width: 100%;
+		float: none;
+	}
+
+	.vehicle-infolist h4{
+		display: block;
+		font-size: 4.5vh;
+	}
+
+	.box .flat-img{
+		display: block;
+		width: 100%;
+		float: none !important;
+		text-align: center;
+	}
+	.box .flat-img::before{
+		float: none;
+	}
+	.vehicle-infolist .list{
+		padding: 1vh;
+		display: block;
+		background-color: rgba(0, 0, 0, 0.1);
+		overflow: auto;
+		width: 100%;
+	}
 }
 
 .popup-vehicles{
@@ -325,7 +392,7 @@
 	padding: 0px 0px 0px 0px;
 	margin: none;
 	height: 60px;
-	text-overflow: ellipsis;
+	
 }
 
 .popup-position li:hover{
@@ -401,30 +468,6 @@
 	margin-top:1vh;
 }
 
-.vehicle-infolist{
-	display: inline-block;
-	float: right;
-	width: 40%;
-	vertical-align: middle;
-}
-
-.vehicle-infolist h4{
-	font-size: 4.5vh;
-}
-
-.vehicle-infolist .list{
-	padding: 1vh;
-	display: inline-block;
-	background-color: rgba(0, 0, 0, 0.1);
-	overflow: auto;
-	width: 80%;
-}
-
-
-.vehicle-infolist .list p{
-	text-align: center;
-}
-
 .info-element{
 	display: inline-block;
 	width: 50%;
@@ -460,6 +503,18 @@
 .contact a:hover{
 	text-decoration: none;
 	color: #E53E33;
+}
+
+@media (max-width: 980px){
+	.contact{
+		padding: 0;
+		padding-bottom: 4vh;
+		padding-top: 4vh;
+	}
+
+	.copyright p{
+		padding-right: 4vh;
+	}
 }
 
 .footer-icon:before{

@@ -31,11 +31,11 @@
 			<h1>Taxi Doudou</h1>
 			<div class="postiion-container">
 				<h3 class="col-md-12 no-padding">Choisissez votre destination</h3>
-				<div class="form-bg col-md-12 col-sm-12">
+				<div class="form-bg col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
-					  <div class="form-group col-md-7 col-sm-12">
+					  <div class="form-group col-md-7 col-sm-12 col-xs-12">
 					    <label class="sr-only" for="exampleInputAmount">Endroit où vous voulez aller</label>
-						<div class="input-group col-md-12 col-sm-12" id="input_position">
+						<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
 							<input type="text" class="form-control" id="position" placeholder="Où voulez-vous aller ?">
 							<div class="input-group-addon addon">
 								<span class="flaticon-location-pin"></span>
@@ -43,10 +43,10 @@
 						</div>
 					  </div>
 
-					  <div class="form-group col-md-4 col-sm-12">
+					  <div class="form-group col-md-4 col-sm-12 col-xs-12">
 
 					    <label class="sr-only" for="exampleInputAmount">Véhicule à utiliser</label>
-						<div class="input-group col-md-12 col-sm-12" id="input_vehicles">
+						<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_vehicles">
 							
 							<button type="text" class="form-control" id="vehicles" type="button">
 							<span class="text">Véhicule à utiliser</span>
