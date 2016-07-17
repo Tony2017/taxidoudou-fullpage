@@ -1,31 +1,30 @@
 <div class="section" id="section1">
 	<div id="subnav">
-		<div class="container">
-			<div class="col-md-5" id="where_go">
+		<div class="container" style="height: 100%;">
+			<div class="col-md-5 col-sm-5 col-xs-5" id="where_go">
 				<div class="flaticon-location-pin flaticon"></div>
 				<h4 class="subtitle">Choisissez l'endroit</h4>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3 col-xs-3">
 				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Choisissez le véhicule</h4>
 			</div>
-			<div class="col-md-3 subtitle">
+			<div class="col-md-3 col-sm-3 col-xs-3 subtitle">
 				<div class="flaticon-travel flaticon"></div><h4 class="subtitle">Voyagez</h4>
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-3 col-sm-3 col-xs-3">
 				<div class="flaticon-frontal-taxi-cab flaticon"></div><h4 class="subtitle">Simple et rapide</h4>
 			</div>
-			<div class="col-md-3 subtitle">
+			<div class="col-md-3 col-sm-3 col-xs-3 subtitle">
 				<div class="flaticon-24-hour-service flaticon"></div><h4 class="subtitle">Service 24H/24</h4>
 			</div>
-			<div class="col-md-5" id="where_go">
+			<div class="col-md-5 col-sm-5 col-xs-5" id="where_go">
 				<div class="flaticon-switzerland flaticon"></div>
 				<h4 class="subtitle">Dans toute la suisse</h4>
 			</div>
 			
 		</div>
 	</div>
-
 	<div class="col-md-offset-1 col-md-11 titles-container">
 		<div class="container">
 			<h1>Taxi Doudou</h1>
@@ -82,5 +81,4 @@
 
 	<ul class="popup-position deactivated">
 	</ul>
-
 </div>
