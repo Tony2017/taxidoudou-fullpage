@@ -5,7 +5,6 @@
 	<meta name="description" content="fullPage full-screen navigation and sections control menu." />
 	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />
 	<meta name="Resource-type" content="Document" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
