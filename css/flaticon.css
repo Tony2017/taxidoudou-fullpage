@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 10/07/2016 17:00
+  	Creation date: 19/07/2016 19:57
   	*/
 
 @font-face {
@@ -36,9 +36,9 @@
 .flaticon-close-cross:before { content: "\f103"; }
 .flaticon-cube-with-arrows:before { content: "\f104"; }
 .flaticon-disco-ball:before { content: "\f105"; }
-.flaticon-envelope:before { content: "\f106"; }
-.flaticon-facebook-logo:before { content: "\f107"; }
-.flaticon-frontal-taxi-cab:before { content: "\f108"; }
+.flaticon-facebook-logo:before { content: "\f106"; }
+.flaticon-frontal-taxi-cab:before { content: "\f107"; }
+.flaticon-gps:before { content: "\f108"; }
 .flaticon-load:before { content: "\f109"; }
 .flaticon-location-pin:before { content: "\f10a"; }
 .flaticon-minibus:before { content: "\f10b"; }
@@ -46,6 +46,7 @@
 .flaticon-multiple-users-silhouette:before { content: "\f10d"; }
 .flaticon-percentage:before { content: "\f10e"; }
 .flaticon-phone-receiver:before { content: "\f10f"; }
-.flaticon-switzerland:before { content: "\f110"; }
-.flaticon-trailer:before { content: "\f111"; }
-.flaticon-travel:before { content: "\f112"; }
+.flaticon-route:before { content: "\f110"; }
+.flaticon-switzerland:before { content: "\f111"; }
+.flaticon-trailer:before { content: "\f112"; }
+.flaticon-travel:before { content: "\f113"; }

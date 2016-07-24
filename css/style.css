@@ -567,3 +567,62 @@
 .copyright p{
 	margin: 0px;
 }
+
+.map-infos{
+	display: inline-block;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	height: 50vh;
+}
+
+.map-infos .flaticon{
+	color: black;
+	display: inline-block;
+	height: 100%;
+	width: 40%;
+	vertical-align: middle;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding-left: 2vh;
+	padding-right: 2vh;
+	float: left;
+}
+
+.map-infos .flaticon::before{
+	display: inline-block;
+	font-size: 35vh;
+	vertical-align: middle;
+	color: #bdc3c7;
+}
+
+.map-location{
+	display: inline-block;
+	height: 100%;
+	width: 60%;
+	float: left;
+	padding: 3vh;
+}
+
+.map-location .pos-text{
+	display: inline-block;
+	width: 15%;
+	height: 20%;
+	font-size: 4vh;
+	float: left;
+	display: table;
+}
+
+.map-location .pos-text p{
+	display: inline-block;
+	color: #95a5a6;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.map-location .pos-line{
+	display: inline-block;
+	width: 80%;
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 20%;
+	margin-bottom: 2vh;
+}
+
