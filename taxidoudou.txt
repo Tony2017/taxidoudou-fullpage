@@ -1,0 +1,43 @@
+TaxiDoudou, remarques de Kevin le 24.7.2016
+
+Mettre un autre input pour situer la personne où elle (appuyer sur le logo "localization" permettra d'afficher une carte Google).
+Il faudra donc en tout 3 input, le premier: me localiser, le deuxième: où voulez-vous aller, le troisième: Véhicule à utiliser
+
+TaxiTouran jusqu'à 7 places (6 personnes avec le chauffeur). Ne pas mettre jusqu'à 7 places mais seulement 7 places.
+
+Faire pareille avec le TaxiBus (15 places).
+
+Faire en sorte que tout le texte apparaisse sous mobile (surtout fêtes).
+
+contact@taxidoudou.ch --> mail à créer.
+
+Class E, 270 break modèle, année 2004
+
+Flèches sur mobile débordent sur les coins
+
+TaxiTouran, enlever Tv intégrée car il n'y en a pas.
+
+Enlever prix attractifs.
+
+Mettre le facebook en haut à gauche lorsque l'écran est en taille mobile.
+
+Mettre sur la première page: A la place => "Calculer le prix"
+
+Mettre une autre page lorsqu'on clic sur "Calculer le prix", qui nous rendra sur une autre page où le prix de x à x s'affichera
+
+
+Prestations: faire une page avec les prestations, avec les photos etc..
+
+Nous trouver: afficher une carte google map avec le point sur la gare d'Estavayer-le-Lac.
+
+Dans Nous trouver: mettre un texte d'introduction, par exemple que le taxi opère dans toute la région d'Estavayer-le-La
+
+Pouvoir, appuyer sur l'image du bus pour afficher toutes les images de ceci. Faire en sorte que la personne sache qu'on peut clicer sur les images
+Pour ceci, ajouter des miniatures sous le bus .
+
+noter 7/7 au lieu de: "Dans toute la suisse". Ajouter "Service de qualité", "Tarifs spéciaux avec le logo de l'avion". Faire un mélange entre la phrase de Longue distance (sur l'ancien site et Tarifs spéciaux sur l'ancien site aussi)
+
+Rajouter la merco sur es images, la merco elle a 5 places
+
+Rajouter une image du tableau de bord comme un background
+
