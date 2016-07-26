@@ -117,13 +117,13 @@
     	});
     	
     	$("#taxi_vehicle").click(function() {
-    		$("#vehicles span[class='text']").text("Taxi (1 à 4 places)");
+    		$("#vehicles span[class='text']").text("Taxi (7 places)");
     		$(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
     	});
 
     	$("#minibus_vehicle").click(function() {
-    		$("#vehicles span[class='text']").text("Minibus (1 à 15 places)");
+    		$("#vehicles span[class='text']").text("Minibus (15 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
     	});

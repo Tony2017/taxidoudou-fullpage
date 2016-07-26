@@ -368,14 +368,14 @@
     display: none;
 }
 
-#vehicles:focus, #vehicles, #position:focus, #position{
+#vehicles:focus, #vehicles, #position:focus, #localizeme:focus, #position {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
   border-color: #CCC;
 }
 
-#vehicles{
+#vehicles, #localizeme{
 	text-align: left;
 	font-size: 18px;
 	color: #999;
