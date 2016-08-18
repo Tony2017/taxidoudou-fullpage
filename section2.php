@@ -1,103 +1,64 @@
-<div class="section" id="section2">	    
-	<div class="slide" id="slide1">		
-		<section class="col-md-12">
-			<div class="box">
-				<img src="css/img/vehicles/combi-mercedes.png" alt="Bus 1 à 15 places" />
-				<div class="vehicle-infolist">
-					<h4>TaxiBus</h4>
-					<div class="list">
-						<div class="info-element">
-							<div class="flaticon-multiple-users-silhouette"></div>
-							<p>15 places</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-monitor"></div>
-							<p>Écran intégré</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-24-hour-service"></div>
-							<p>Disponible 24h/24 7j/7</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-car-contract"></div>
-							<p>Possibilité de location</p>
-						</div>
-					</div>
-				</div>
-				<p class="box-description">Idéal pour sortie en groupe de tout genre dans toute la Suisse (soirées, festivaux, voyage)<br />Disponible de jour ou de nuit</p>
-			</div>
-		</section>
-	</div>
-	<div class="slide" id="slide2">
-		<section class="col-md-12">
-			<div class="box">
-				<img src="css/img/vehicles/vw-touran.png" alt="Taxi 7 places" />
-				<div class="vehicle-infolist">
-					<h4>TaxiTouran</h4>
-					<div class="list">
-						<div class="info-element">
-							<div class="flaticon-multiple-users-silhouette"></div>
-							<p>7 places</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-24-hour-service"></div>
-							<p>Disponible 24h/24 7j/7</p>
-						</div>
-					</div>
-				</div>
-				<p class="box-description">Idéal pour voyager où vous le souhaitez en Suisse, que vous soyez seul ou en petit groupe<br />Disponible de jour ou de nuit</p>
-			</div>
-		</section>
-	</div>
-	<div class="slide" id="slide3">
-		<section class="col-md-12">
-			<div class="box">
-				<img src="css/img/vehicles/mercedes.png" alt="Taxi 7 places" />
-				<div class="vehicle-infolist">
-					<h4>TaxiMercedes</h4>
-					<div class="list">
-						<div class="info-element">
-							<div class="flaticon-multiple-users-silhouette"></div>
-							<p>5 places</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-24-hour-service"></div>
-							<p>Disponible 24h/24 7j/7</p>
-						</div>
-					</div>
-				</div>
-				<p class="box-description">Idéal pour voyager à petite ou à moyenne distance, confort garanti. Disponible de jour ou de nuit</p>
-			</div>
-		</section>
-	</div>
-	<div class="slide" id="slide4">
-		<section class="col-md-12">
-			<div class="box">
-				<!--<div class="flaticon-trailer flat-img"></div>-->
-				<img src="css/img/vehicles/remorque.png" alt="Remorque" />
-				<div class="vehicle-infolist">
-					<h4>TaxiRemorque</h4>
-					<div class="list">
-						<div class="info-element">
-							<div class="flaticon-load"></div>
-							<p>Jusqu'à 1'600</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-cube-with-arrows"></div>
-							<p>1m x 2m x 2m</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-calendar"></div>
-							<p>Sur réservation</p>
-						</div>
-						<div class="info-element">
-							<div class="flaticon-car-contract"></div>
-							<p>Possibilité de location</p>
-						</div>
-					</div>
-				</div>
-				<p class="box-description">Idéal pour voyage avec bagages, skis ou autres objets à transporter partout en Suisse<br />Possibilité de location</p>
-			</div>
-		</section>
+<div class="section" id="section2">
+	<div class="container">
+		<ul class="nav nav-pills nav-stacked col-md-2">
+		  <li class="active">
+		  	<a href="#tab_a" data-toggle="pill" data-target="#tab_a, #tab_a2">
+			  	<div class="flaticon-frontal-taxi-cab flaticon"></div>
+			  	<p>Taxi Service</p>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="#tab_b" data-toggle="pill" data-target="#tab_b, #tab_b2">
+			  	<div class="flaticon-minibus flaticon"></div>
+			  	<p>Bus</p>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="#tab_c" data-toggle="pill" data-target="#tab_c, #tab_c2">
+			  	<div class="flaticon-trailer flaticon"></div>
+			  	<p>Remorque</p>
+		  	</a>
+		  </li>
+		  <li>
+		  	<a href="#tab_d" data-toggle="pill" data-target="#tab_d, #tab_d2">
+			  	<div class="flaticon-sale flaticon"></div>
+			  	<p>Tarifs spéciaux</p>
+		  	</a>
+		  </li>
+		</ul>
+		<div class="tab-content col-md-5">
+		        <div class="tab-pane active" id="tab_a">
+		        	<h4>Taxi à Estavayer-le-Lac et sa région</h4>
+		            <p>Nous mettons à disposition un service de taxi à Estavayer-le-Lac et sa région 24h/24 7j7.
+		            Profitez du confort de nos différents véhicules, pour de courts ou de plus longs trajets.</p>
+		        </div>
+		        <div class="tab-pane" id="tab_b">
+		            <h4>Bus pour voyage événementiel/de groupe</h4> 
+		            <p>Idéal pour les longs voyages, sortie d'événements ou sorties de groupe, nous disposons également d'un bus pouvant transporter jusqu'à 14 personnes. Le véhicule est équipé d'un écran pour films, musique, etc.</p>
+		            <p>Possibilité de location</p>
+		        </div>
+		        <div class="tab-pane" id="tab_c">
+		            <h4>Louer une remorque ou l'utiliser avec notre bus</h4> 
+		            <p>Vous souhaitez voyager avec vos bagages, vos skis ou bien tout autre objet de grande taille ? Profitez de notre remorque d'une capacité jusqu'à 1'600 KG. </p>
+		            <p>Possibilité de voyage avec notre TaxiBus</p>
+		            <p>Possibilité de location</p>
+		        </div>
+		        <div class="tab-pane" id="tab_d">
+		            <h4>Tarifs spéciaux</h4> 
+		            <p>Possibilité de tarifs spéciaux pour: retrait de permis, navette aéroport, événements, fêtes de jeunesse, excursions traditionnelles, personnes âgées etc..</p>
+		        </div>
+
+		</div>
+
+		<div class="tab-content col-md-4">
+			<div class="tab-pane active" id="tab_a2">
+		        <img src="css/img/hailingtaxi_mini.jpg" class="right-tab-img"  id="tab_a2" alt="Hailing taxi" />
+		    </div>
+		    <div class="tab-pane" id="tab_b2">
+		        <img src="css/img/incar.jpg" class="right-tab-img" id="tab_b2" alt="Hailing taxi" />
+		    </div>
+		</div>
+
+		</div>
 	</div>
 </div>

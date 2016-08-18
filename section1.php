@@ -1,4 +1,28 @@
 <div class="section" id="section1">
+
+<div id="position-windows">
+	<div id="position-windows-subnav">
+		<div class="container">
+			<div class="row">
+				<div class="form-group col-md-7 col-sm-12 col-xs-12">
+					<label class="sr-only">Où êtes-vous ?</label>
+					<div class="input-group col-md-12 col-sm-12 col-xs-12">
+						<input type="text" class="form-control" id="position-windows-input" placeholder="Où êtes-vous ?">
+						<div class="input-group-addon addon">
+							<a href="#" id="showmap_to2"><span class="flaticon-location-pin"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-12 col-xs-12 position-windows-search">Localiser</div>
+				<div id="position-windows-exit" class="col-md-1 col-sm-12 col-xs-12"></div>
+			</div>
+		</div>
+	</div>
+	<div id="map-map"></div>
+	<div class="btn-localize">
+		<a href="#" id="localizemenow">Me localiser</a>
+	</div>
+</div>
 	<div id="subnav">
 		<div class="container" style="height: 100%;">
 			<div class="col-md-5 col-sm-5 col-xs-5" id="where_go">
@@ -33,11 +57,11 @@
 				<div class="form-bg col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="form-group col-md-4 col-sm-12 col-xs-12">
-							<label class="sr-only" for="exampleInputAmount">Endroit où vous voulez aller</label>
+							<label class="sr-only" for="exampleInputAmount">Où voulez-vous aller ?</label>
 							<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
 								<input type="text" class="form-control" id="position" placeholder="Où voulez-vous aller ?">
 								<div class="input-group-addon addon">
-									<span class="flaticon-location-pin"></span>
+									<a href="#" id="showmap_to"><span class="flaticon-location-pin"></span></a>
 								</div>
 							</div>
 					  	</div>
@@ -46,7 +70,7 @@
 							<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_localizeme">
 								<input type="text" class="form-control" id="localizeme" placeholder="Où êtes-vous ?">
 								<div class="input-group-addon addon">
-									<span class="flaticon-location-pin"></span>
+									<a href="#" id="showmap_from"><span class="flaticon-location-pin"></span></a>
 								</div>
 							</div>
 						</div>
@@ -86,4 +110,5 @@
 
 	<ul class="popup-position deactivated">
 	</ul>
+
 </div>

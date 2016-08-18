@@ -1,70 +1,103 @@
-<div class="section fp-auto-height" id="section3">
-	<div class="contact">
-		<div class="container">
-			<!--<div class="col-md-4">
-				<h4>A propos de nous</h4>
-				<p>
-					TaxiDoudou est une entreprise de Taxi basée à Estavayer-le-Lac opérant dans le canton de Vaud et en Suisse.
-					Depuis plusieurs années, TaxiDoudou s'occupe de faire voyager les gens à destination des aéroports, des événements/fêtes/soirées mais aussi vers n'importe quelle destination en Suisse.
-					Les prix attractifs pour les personnes ayant un retrait de permis, voyageant beaucoup ou les étudiants font de TaxiDoudou un transporteur incontournable.
-					La remorque disponible pour les voyages permet le transport de tout matériel jusqu'à 1'600 KG, que ce soit des bagages, des skis ou tout autre chose. Possibilité de louer ce dernier
-					N'hésitez pas à nous contacter ou de nous téléphoner pour avoir plus d'informations sur nos offres.
-				</p>
-			</div>-->
-			<div class="address col-md-4 col-sm-12">
-				<h4>Contactez-nous</h4>
-				<div class="address-info">
-					<div class="flaticon-location-pin footer-icon"></div><p>Cité de la Rosière 1</p>, <p>1470 Estavayer-le-Lac</p>
-				</div>
-				<div class="address-info">
-					<div class="flaticon-phone-receiver footer-icon"></div><p>079 846 29 84</p>
-				</div>
-				<div class="address-info">
-					<div class="flaticon-envelope footer-icon"></div><p>contact@taxidoudou.ch</p>
-				</div>
-				<div class="address-info">
-					<div class="flaticon-facebook-logo footer-icon"></div><p><a href="https://www.facebook.com/taxidoudou/" rel="nofollow">Taxidoudou</a></p>
-				</div>
-			</div>
-			<div class="address col-md-8 col-sm-12 col-xs-12">
-				<h4>Envoyez-nous un message</h4>
-				<div class="form-inline col-md-6 col-sm-12 col-xs-12">
-					<div class="row">
-					  <div class="form-group col-md-12 col-sm-12 col-xs-12" style="padding-right: 0px;">
-					    <label class="sr-only" for="exampleInputAmount">Nom & Prénom</label>
-						<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
-							<input type="text" class="form-control" id="position" placeholder="Nom & Prénom">
+<div class="section" id="section3">	    
+	<div class="slide" id="slide1">		
+		<section class="col-md-12">
+			<div class="box">
+				<img src="css/img/vehicles/combi-mercedes.png" alt="Bus 1 à 15 places" />
+				<div class="vehicle-infolist">
+					<h4>TaxiBus</h4>
+					<div class="list">
+						<div class="info-element">
+							<div class="flaticon-multiple-users-silhouette"></div>
+							<p>14 personnes</p>
 						</div>
-					  </div>
+						<div class="info-element">
+							<div class="flaticon-monitor"></div>
+							<p>Écran intégré</p>
+						</div>
+						<div class="info-element">
+							<div class="flaticon-24-hour-service"></div>
+							<p>Disponible 24h/24 7j/7</p>
+						</div>
+						<div class="info-element">
+							<div class="flaticon-car-contract"></div>
+							<p>Possibilité de location</p>
+						</div>
 					</div>
 				</div>
-				<div class="form-inline col-md-6 col-sm-12 col-xs-12">
-					<div class="row">
-					  <div class="form-group col-md-12 col-sm-12 col-xs-12" style="padding-right: 0px;">
-					    <label class="sr-only" for="exampleInputAmount">Email</label>
-						<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
-							<input type="text" class="form-control" id="position" placeholder="Email">
+				<p class="box-description">Idéal pour sortie en groupe de tout genre dans toute la Suisse (soirées, festivaux, voyage)<br />Disponible de jour ou de nuit</p>
+			</div>
+		</section>
+	</div>
+	<div class="slide" id="slide2">
+		<section class="col-md-12">
+			<div class="box">
+				<img src="css/img/vehicles/vw-touran.png" alt="Taxi 7 places" />
+				<div class="vehicle-infolist">
+					<h4>TaxiTouran</h4>
+					<div class="list">
+						<div class="info-element">
+							<div class="flaticon-multiple-users-silhouette"></div>
+							<p>6 personnes</p>
 						</div>
-					  </div>
+						<div class="info-element">
+							<div class="flaticon-24-hour-service"></div>
+							<p>Disponible 24h/24 7j/7</p>
+						</div>
 					</div>
 				</div>
-				<div class="form-inline col-md-12 col-sm-12 col-xs-12">
-					<div class="row">
-					  <div class="form-group col-md-12 col-sm-12 col-xs-12" style="padding-right: 0px;">
-					    <label class="sr-only" for="exampleInputAmount">Message</label>
-						<div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
-	
-							<textarea class="form-control" rows="4" placeholder="Message"></textarea>
+				<p class="box-description">Idéal pour voyager où vous le souhaitez en Suisse, que vous soyez seul ou en petit groupe<br />Disponible de jour ou de nuit</p>
+			</div>
+		</section>
+	</div>
+	<div class="slide" id="slide3">
+		<section class="col-md-12">
+			<div class="box">
+				<img src="css/img/vehicles/mercedes.png" alt="Taxi 7 places" />
+				<div class="vehicle-infolist">
+					<h4>TaxiMercedes</h4>
+					<div class="list">
+						<div class="info-element">
+							<div class="flaticon-multiple-users-silhouette"></div>
+							<p>4 personnes</p>
 						</div>
-					  </div>
+						<div class="info-element">
+							<div class="flaticon-24-hour-service"></div>
+							<p>Disponible 24h/24 7j/7</p>
+						</div>
 					</div>
 				</div>
+				<p class="box-description">Idéal pour voyager à petite ou à moyenne distance, confort garanti. Disponible de jour ou de nuit</p>
 			</div>
-		</div>
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<p>Copyright © 2016 TaxiDoudou</p>
+		</section>
+	</div>
+	<div class="slide" id="slide4">
+		<section class="col-md-12">
+			<div class="box">
+				<!--<div class="flaticon-trailer flat-img"></div>-->
+				<img src="css/img/vehicles/remorque.png" alt="Remorque" />
+				<div class="vehicle-infolist">
+					<h4>TaxiRemorque</h4>
+					<div class="list">
+						<div class="info-element">
+							<div class="flaticon-load"></div>
+							<p>Jusqu'à 1'600</p>
+						</div>
+						<div class="info-element">
+							<div class="flaticon-cube-with-arrows"></div>
+							<p>1m x 2m x 2m</p>
+						</div>
+						<div class="info-element">
+							<div class="flaticon-calendar"></div>
+							<p>Sur réservation</p>
+						</div>
+						<div class="info-element">
+							<div class="flaticon-car-contract"></div>
+							<p>Possibilité de location</p>
+						</div>
+					</div>
+				</div>
+				<p class="box-description">Idéal pour voyage avec bagages, skis ou autres objets à transporter partout en Suisse<br />Possibilité de location</p>
 			</div>
-		</div>
+		</section>
+	</div>
 </div>
