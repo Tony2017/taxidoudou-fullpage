@@ -12,13 +12,17 @@
 
 		$numb_of_arrays = count($obj);
 
-		
-		for($i = 0; $i < $numb_of_arrays; $i++){
-			$json_position = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($obj[$i]['description']) . '&components=country:ch');
-			$obj2 = json_decode($json_position, true)["results"];
 
-			$lat = $obj2[0]["geometry"]["location"]["lat"];
-			$lng = $obj2[0]["geometry"]["location"]["lng"];
+		for($i = 0; $i < $numb_of_arrays; $i++){
+//			$json_position = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($obj[$i]['description']) . '&components=country:ch');
+//			$obj2 = json_decode($json_position, true)["results"];
+//
+//			$lat = $obj2[0]["geometry"]["location"]["lat"];
+//			$lng = $obj2[0]["geometry"]["location"]["lng"];
+
+
+			$lat = 0;
+			$lng = 0;
 
 
 			$encoded_array[] = array("description" => $obj[$i]['description'], "lat" => $lat, "lng" => $lng);
