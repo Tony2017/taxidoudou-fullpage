@@ -175,21 +175,34 @@
             $("#position").val($(this).text());
             $(".popup-position").addClass("deactivated");
 
-            var pos = {lat: $(this).data('lat'), lng: $(this).data('lng')};
-            map.setCenter({
-                lat: $(this).data('lat'),
-                lng: $(this).data('lng')
-            });
+            var m_posData;
+            var text = $(this).text();
+            console.log("test" + text);
+            $.getJSON("query.php?type=geocode&text=" + $(this).text(), function (data) {
+                m_posData = data;
+            })
+                .done(function () {
+                    var obj = m_posData;
 
-            map.setZoom(16);
+                    var pos = {lat: obj[0].lat, lng: obj[0].lng};
+                    map.setCenter({
+                        lat: obj[0].lat,
+                        lng: obj[0].lng
+                    });
 
-            marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                title: '',
-                draggable: true
-            });
+                    map.setZoom(16);
 
+                    marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: '',
+                        draggable: true
+                    });
+
+                })
+                .fail(function () {
+
+                });
         });
 
 
@@ -203,7 +216,7 @@
             var text = $(this).val();
             delay(function () {
                 var m_data;
-                $.getJSON("query.php?text=" + text, function (data) {
+                $.getJSON("query.php?type=place&text=" + text, function (data) {
                     m_data = data;
                 })
                     .done(function () {
@@ -232,7 +245,7 @@
             var text = $(this).val();
             delay(function () {
                 var m_data;
-                $.getJSON("query.php?text=" + text, function (data) {
+                $.getJSON("query.php?type=place&text=" + text, function (data) {
                     m_data = data;
                 })
                     .done(function () {
@@ -258,8 +271,6 @@
         });
 
     });
-
-
 
 
     function initMap() {
