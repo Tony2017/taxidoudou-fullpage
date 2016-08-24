@@ -50,6 +50,7 @@
 <script>
     var map;
     var marker;
+    var lastWrittingInputDiv;
     jQuery(document).ready(function () {
 
 
@@ -70,9 +71,22 @@
             marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                title: '',
-                draggable: true
+                title: ''
             });
+
+            $.getJSON("query.php?type=geocoding&latlng=" + pos.lat + ',' + pos.lng , function (data) {
+                m_posName = data;
+            })
+                .done(function () {
+                    var obj = m_posName;
+
+                    $('#position-windows-input').val(obj[0].formatted_address);
+                    $('#localizeme').val(obj[0].formatted_address);
+                    console.log("réussi");
+                })
+                .fail(function () {
+
+                });
         }
 
         function erreurPosition(error) {
@@ -130,11 +144,31 @@
         });
 
         $("#position").click(function () {
+            if (lastWrittingInputDiv != "#position") {
+                return;
+            }
+            lastWrittingInputDiv = "#position";
             $(".popup-position").removeClass("fadeIn animated");
             $(".popup-position").removeClass("fadeOut animated");
             var position_left = $("#position").offset().left;
             var position_top = $("#input_position").offset().top + $("#position").height();
             var position_width = $("#input_position").width();
+            $(".popup-position").css({"left": position_left, "top": position_top, "width": position_width});
+
+            if ($(".popup-position").has("li").length)
+                $(".popup-position").removeClass("deactivated");
+        });
+
+        $("#localizeme").click(function () {
+            if (lastWrittingInputDiv != "#localizeme") {
+                return;
+            }
+            lastWrittingInputDiv = "#localizeme";
+            $(".popup-position").removeClass("fadeIn animated");
+            $(".popup-position").removeClass("fadeOut animated");
+            var position_left = $("#localizeme").offset().left;
+            var position_top = $("#input_localizeme").offset().top + $("#localizeme").height();
+            var position_width = $("#input_localizeme").width();
             $(".popup-position").css({"left": position_left, "top": position_top, "width": position_width});
 
             if ($(".popup-position").has("li").length)
@@ -172,13 +206,14 @@
 
 
         $(".popup-position").on("click", "li", function (event) {
-            $("#position").val($(this).text());
+            $(lastWrittingInputDiv).val($(this).text());
             $(".popup-position").addClass("deactivated");
 
+            loadingAnimation(lastWrittingInputDiv);
             var m_posData;
-            var text = $(this).text();
-            console.log("test" + text);
-            $.getJSON("query.php?type=geocode&text=" + $(this).text(), function (data) {
+            var place_id = $(this).data("placeid");
+            var m_posName;
+            $.getJSON("query.php?type=details&place_id=" + place_id, function (data) {
                 m_posData = data;
             })
                 .done(function () {
@@ -195,9 +230,15 @@
                     marker = new google.maps.Marker({
                         position: pos,
                         map: map,
-                        title: '',
-                        draggable: true
+                        title: ''
                     });
+                    if (lastWrittingInputDiv == "#position") {
+                        $("#input_position > .input-group-addon.addon > .spinner").remove();
+                        $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility": "visible"});
+                    }else if (lastWrittingInputDiv == "#localizeme") {
+                        $("#input_localizeme > .input-group-addon.addon > .spinner").remove();
+                        $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility": "visible"});
+                    }
 
                 })
                 .fail(function () {
@@ -213,6 +254,7 @@
 
 
         $("#position").keyup(function () {
+            lastWrittingInputDiv = "#position";
             var text = $(this).val();
             delay(function () {
                 var m_data;
@@ -223,7 +265,7 @@
                         $(".popup-position").empty();
                         var obj = m_data;
                         for (var i in obj) {
-                            $(".popup-position").append("<li class=\"pop-text\" data-lat=\"" + obj[i].lat + "\" data-lng=\"" + obj[i].lng + "\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
+                            $(".popup-position").append("<li class=\"pop-text\" data-placeId=\"" + obj[i].place_id + "\" data-lat=\"" + obj[i].lat + "\" data-lng=\"" + obj[i].lng + "\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
                         }
                         var position_left = $("#position").offset().left;
                         var position_top = $("#input_position").offset().top + $("#input_position").height() + 1;
@@ -232,6 +274,7 @@
                         $(".popup-position").removeClass("deactivated");
                         $(".popup-position").removeClass("fadeOut animated");
                         $(".popup-position").addClass("fadeIn animated");
+
                     })
                     .fail(function () {
                         $(".popup-position").empty();
@@ -242,6 +285,7 @@
         });
 
         $("#localizeme").keyup(function () {
+            lastWrittingInputDiv = "#localizeme";
             var text = $(this).val();
             delay(function () {
                 var m_data;
@@ -252,7 +296,7 @@
                         $(".popup-position").empty();
                         var obj = m_data;
                         for (var i in obj) {
-                            $(".popup-position").append("<li class=\"pop-text\" data-lat=\"" + obj[i].lat + "\" data-lng=\"" + obj[i].lng + "\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
+                            $(".popup-position").append("<li class=\"pop-text\" data-placeId=\"" + obj[i].place_id + "\"  data-lat=\"" + obj[i].lat + "\" data-lng=\"" + obj[i].lng + "\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
                         }
                         var position_left = $("#localizeme").offset().left;
                         var position_top = $("#input_localizeme").offset().top + $("#input_localizeme").height() + 1;
@@ -270,7 +314,88 @@
             }, 300);
         });
 
+        $("#position-windows-input").keyup(function () {
+            lastWrittingInputDiv = "#position-windows-input";
+            var text = $(this).val();
+            delay(function () {
+                var m_data;
+                $.getJSON("query.php?type=place&text=" + text, function (data) {
+                    m_data = data;
+                })
+                    .done(function () {
+                        $(".popup-position").empty();
+                        var obj = m_data;
+                        for (var i in obj) {
+                            $(".popup-position").append("<li class=\"pop-text\" data-placeId=\"" + obj[i].place_id + "\"  data-lat=\"" + obj[i].lat + "\" data-lng=\"" + obj[i].lng + "\"><span class=\"flaticon-location-pin\"></span>" + obj[i].description + "</li>");
+                        }
+                        var position_left = $("#position-windows-input").offset().left;
+                        var position_top = $("#position-windows-subnav").offset().top + $("#position-windows-subnav").outerHeight(true) + 1;
+                        var position_width = $("#position-windows-input").width();
+                        $(".popup-position").css({
+                            "left": position_left,
+                            "top": position_top,
+                            "width": position_width,
+                            "z-index": 1200
+                        });
+                        $(".popup-position").removeClass("deactivated");
+                        $(".popup-position").removeClass("fadeOut animated");
+                        $(".popup-position").addClass("fadeIn animated");
+                    })
+                    .fail(function () {
+                        $(".popup-position").empty();
+                        $(".popup-position").removeClass("fadeIn animated");
+
+                    });
+            }, 300);
+        });
+
+
+        // END OF JQUERY
     });
+
+    $('#showmap_from').on('click', function () {
+        $('#position-windows').css({"visibility": "visible"});
+
+        $('#position-windows-input').attr("placeholder", "Où êtes-vous actuellement ?");
+        if ($('#localizeme').val()) {
+            $('#position-windows-input').val($('#localizeme').val());
+        }
+
+        if ($('#position-windows-input').val()) {
+            if ($('#position-windows-input').val() != $('#localizeme').val()) {
+                $('#position-windows-input').val("");
+            }
+        }
+
+        $('#position-windows').css({"visibility": "visible"});
+        $('.btn-localize').css({"visibility": "visible"});
+    });
+
+    $('#showmap_to').on('click', function () {
+        $('#position-windows-input').attr("placeholder", "Où voulez-vous aller ?");
+        if ($('#position').val()) {
+            $('#position-windows-input').val($('#position').val());
+        }
+
+        if ($('#position-windows-input').val()) {
+            if ($('#position-windows-input').val() != $('#position').val()) {
+                $('#position-windows-input').val("");
+            }
+        }
+
+        $('#position-windows').css({"visibility": "visible"});
+        $('.btn-localize').css({"visibility": "hidden"});
+    });
+
+    function loadingAnimation(lastWrittingInputDiv) {
+        if (lastWrittingInputDiv == "#position") {
+            $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility":"hidden"});
+            $("#input_position > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
+        } else if (lastWrittingInputDiv == "#localizeme") {
+            $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility":"hidden"});
+            $("#input_localizeme > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
+        }
+    }
 
 
     function initMap() {
@@ -332,27 +457,6 @@
 
     $('#position-windows-exit').on('click', function () {
         $('#position-windows').css({"visibility": "hidden"});
-        $('.btn-localize').css({"visibility": "hidden"});
-    });
-
-    $('#showmap_from').on('click', function () {
-        $('#position-windows').css({"visibility": "visible"});
-
-        $('#position-windows-input').attr("placeholder", "Où êtes-vous actuellement ?");
-        if ($('#position').val()) {
-            $('#position-windows-input').val($('#position').val());
-        }
-
-        $('#position-windows').css({"visibility": "visible"});
-        $('.btn-localize').css({"visibility": "visible"});
-    });
-
-    $('#showmap_to').on('click', function () {
-        $('#position-windows-input').attr("placeholder", "Où voulez-vous aller ?");
-        if ($('#position').val()) {
-            $('#position-windows-input').val($('#position').val());
-        }
-        $('#position-windows').css({"visibility": "visible"});
         $('.btn-localize').css({"visibility": "hidden"});
     });
 
