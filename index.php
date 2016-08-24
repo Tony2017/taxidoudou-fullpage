@@ -49,7 +49,11 @@
 
 <script>
     var map;
-    var marker;
+    var marker = new google.maps.Marker({
+        position: {lat: 0, lng: 0},
+        map: map,
+        title: ''
+    });
     var lastWrittingInputDiv;
     jQuery(document).ready(function () {
 
@@ -67,7 +71,7 @@
 
             map.setZoom(14);
             var pos = {lat: position.coords.latitude, lng: position.coords.longitude};
-
+            marker.setMap(null);
             marker = new google.maps.Marker({
                 position: pos,
                 map: map,
@@ -227,6 +231,7 @@
 
                     map.setZoom(16);
 
+                    marker.setMap(null);
                     marker = new google.maps.Marker({
                         position: pos,
                         map: map,
