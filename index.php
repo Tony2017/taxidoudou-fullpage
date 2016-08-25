@@ -78,7 +78,7 @@
                 title: ''
             });
 
-            $.getJSON("query.php?type=geocoding&latlng=" + pos.lat + ',' + pos.lng , function (data) {
+            $.getJSON("query.php?type=geocoding&latlng=" + pos.lat + ',' + pos.lng, function (data) {
                 m_posName = data;
             })
                 .done(function () {
@@ -186,10 +186,17 @@
         });
 
         $("#minibus_vehicle").click(function () {
-            $("#vehicles span[class='text']").text("Minibus (15 places)");
+            $("#vehicles span[class='text']").text("Taxibus (15 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
         });
+
+        $("#taxi_mercedes").click(function () {
+            $("#vehicles span[class='text']").text("Taxi (5 places)");
+            $(".popup-vehicles").addClass("deactivated");
+            $(".popup-vehicles").removeClass("fadeOut animated");
+        });
+
 
         $(document).mouseup(function (e) {
             var container = $("#vehicle, .popup-vehicles, #position, .popup-position");
@@ -211,6 +218,11 @@
 
         $(".popup-position").on("click", "li", function (event) {
             $(lastWrittingInputDiv).val($(this).text());
+            if (lastWrittingInputDiv == "#position-windows-input" && $('#position-windows-input').attr("placeholder") == "Où voulez-vous aller ?") {
+                $('#position').val($(this).text());
+            } else if (lastWrittingInputDiv == "#position-windows-input" && $('#position-windows-input').attr("placeholder") == "Où êtes-vous actuellement ?") {
+                $('#localizeme').val($(this).text());
+            }
             $(".popup-position").addClass("deactivated");
 
             loadingAnimation(lastWrittingInputDiv);
@@ -240,7 +252,7 @@
                     if (lastWrittingInputDiv == "#position") {
                         $("#input_position > .input-group-addon.addon > .spinner").remove();
                         $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility": "visible"});
-                    }else if (lastWrittingInputDiv == "#localizeme") {
+                    } else if (lastWrittingInputDiv == "#localizeme") {
                         $("#input_localizeme > .input-group-addon.addon > .spinner").remove();
                         $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility": "visible"});
                     }
@@ -359,6 +371,7 @@
     });
 
     $('#showmap_from').on('click', function () {
+        lastWrittingInputDiv = "#showmap_from";
         $('#position-windows').css({"visibility": "visible"});
 
         $('#position-windows-input').attr("placeholder", "Où êtes-vous actuellement ?");
@@ -377,6 +390,7 @@
     });
 
     $('#showmap_to').on('click', function () {
+        lastWrittingInputDiv = "#showmap_to";
         $('#position-windows-input').attr("placeholder", "Où voulez-vous aller ?");
         if ($('#position').val()) {
             $('#position-windows-input').val($('#position').val());
@@ -394,10 +408,10 @@
 
     function loadingAnimation(lastWrittingInputDiv) {
         if (lastWrittingInputDiv == "#position") {
-            $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility":"hidden"});
+            $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility": "hidden"});
             $("#input_position > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
         } else if (lastWrittingInputDiv == "#localizeme") {
-            $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility":"hidden"});
+            $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility": "hidden"});
             $("#input_localizeme > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
         }
     }

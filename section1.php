@@ -4,9 +4,9 @@
         <div id="position-windows-subnav">
             <div class="container">
                 <div class="row">
-                    <input type="text" class="col-md-10 col-sm-12 col-xs-12" id="position-windows-input"
+                    <input type="text" class="col-md-10 col-sm-10 col-xs-10" id="position-windows-input"
                            placeholder="">
-                    <div id="position-windows-exit" class="col-md-1 col-sm-12 col-xs-12"></div>
+                    <div id="position-windows-exit" class="col-md-1 col-sm-1 col-xs-1"></div>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="search-button col-md-2">
+                        <div class="search-button col-md-2 col-sm-12 col-xs-12">
                             <button class="btn btn-go" type="button" disabled>Calculer le prix</button>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
         <li class="title">Véhicules <span class="flaticon-close-cross" id="exit_menu"></span></li>
         <li class="pop-text" id="minibus_vehicle"><span class="flaticon-minibus"></span>TaxiBus (15 places)</li>
         <li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>TaxiTouran (7 places)</li>
-        <li class="pop-text" id="taxi_vehicle"><span class="flaticon-frontal-taxi-cab"></span>TaxiMercedes (5 places)
+        <li class="pop-text" id="taxi_mercedes"><span class="flaticon-frontal-taxi-cab"></span>TaxiMercedes (5 places)
         </li>
     </ul>
 
