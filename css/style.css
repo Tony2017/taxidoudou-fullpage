@@ -1020,3 +1020,39 @@
 button.close{
 	width: default;
 }
+
+
+
+/* box services */
+
+.box-services {
+    background-color: #fff;
+    border: 1px solid #DC241F;
+    padding: 3vh;
+    margin-bottom: 4vh;
+}
+
+.box-img {
+    text-align: center;
+    height: 65px;
+}
+
+.box-services > h3 {
+    margin-top: 0;
+    font-family: "Lato Black",sans-serif;
+    font-size: 2.9vh;
+    font-weight: 400;
+    line-height: 2.9vh;
+}
+.box-services > p {
+    margin-top: 3vh;
+    font-family: "Lato Light",sans-serif;
+    font-size: 1.8vh;
+    font-weight: 400;
+    line-height: 2vh;
+}
+
+.box-services, .box-services > h3, .box-services > p {
+    color: #e74c3c;
+    text-align: center;
+}

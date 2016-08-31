@@ -66,6 +66,7 @@
 <section id="fullpage">
     <?php include("section1.php"); ?>
     <?php include("section2.php"); ?>
+    <?php include("section2bis.php"); ?>
     <?php include("section3.php"); ?>
     <?php include("section4.php"); ?>
 </section>
