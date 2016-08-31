@@ -1,6 +1,6 @@
 <div class="section" id="section2">
 	<div class="container">
-		<ul class="nav nav-pills nav-stacked col-md-2">
+		<ul class="nav nav-pills nav-stacked col-md-2 hidden-sm hidden-xs">
 		  <li class="active">
 		  	<a href="#tab_a" data-toggle="pill" data-target="#tab_a, #tab_a2">
 			  	<div class="flaticon-frontal-taxi-cab flaticon"></div>
@@ -26,6 +26,32 @@
 		  	</a>
 		  </li>
 		</ul>
+		<ul class="nav nav-pills hidden-md hidden-lg">
+			<li class="active">
+				<a href="#tab_a" data-toggle="pill" data-target="#tab_a, #tab_a2">
+					<div class="flaticon-frontal-taxi-cab flaticon"></div>
+					<p>Taxi Service</p>
+				</a>
+			</li>
+			<li>
+				<a href="#tab_b" data-toggle="pill" data-target="#tab_b, #tab_b2">
+					<div class="flaticon-minibus flaticon"></div>
+					<p>Bus</p>
+				</a>
+			</li>
+			<li>
+				<a href="#tab_c" data-toggle="pill" data-target="#tab_c, #tab_c2">
+					<div class="flaticon-trailer flaticon"></div>
+					<p>Remorque</p>
+				</a>
+			</li>
+			<li>
+				<a href="#tab_d" data-toggle="pill" data-target="#tab_d, #tab_d2">
+					<div class="flaticon-sale flaticon"></div>
+					<p>Tarifs spéciaux</p>
+				</a>
+			</li>
+		</ul>
 		<div class="tab-content col-md-5">
 		        <div class="tab-pane active" id="tab_a">
 		        	<h4>Taxi à Estavayer-le-Lac et sa région</h4>
@@ -50,7 +76,7 @@
 
 		</div>
 
-		<div class="tab-content col-md-4">
+		<div class="tab-content col-md-4 hidden-sm hidden-xs">
 			<div class="tab-pane active" id="tab_a2">
 		        <img src="css/img/hailingtaxi_mini.jpg" class="right-tab-img"  id="tab_a2" alt="Hailing taxi" />
 		    </div>

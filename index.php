@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <?php include("head.php"); ?>
 <body>
 <header>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-
+                <ul class="facebook-topleft hidden-md hidden-lg hidden-sm">
+                    <li><a href="#" style="display: inline-block; padding: 0px; padding-top: 20px;"
+                           class="facebook-top-right-container"><img src="css/img/facebook-navbar.png" height="30"
+                                                                     alt="Facebook" class="facebook-top-right"/></a>
+                    </li>
+                </ul>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Navigation</span>
@@ -20,8 +25,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><img src="css/img/phone.png" alt="Phone" height="30px" class="top-right-navbar-phone"><a
-                            href="#" style="display: inline-block;"></img>079 846 29 84</a></li>
+                    <li><img src="css/img/phone.png" alt="Phone" height="30" class="top-right-navbar-phone"/><a
+                            href="#" style="display: inline-block;">079 846 29 84</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="active hidden-sm"><a href="#premierePage">Accueil</a></li>
@@ -31,15 +36,33 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right hidden-sm">
                     <li><a href="#" style="display: inline-block; padding: 0px; padding-top: 20px;"
-                           class="facebook-top-right-container"><img src="css/img/facebook-navbar.png" height="30px"
-                                                                     alt="Facebook" class="facebook-top-right"/></a>
+                           class="facebook-top-right-container hidden-xs"><img src="css/img/facebook-navbar.png"
+                                                                               height="30"
+                                                                               alt="Facebook"
+                                                                               class="facebook-top-right"/></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Localisation</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+            </div>
+            <div class="modal-body">
+                <p>Veuillez activer la localisation sur votre téléphone avant de continuer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
 <section id="fullpage">
     <?php include("section1.php"); ?>
     <?php include("section2.php"); ?>
@@ -49,14 +72,15 @@
 
 <script>
     var map;
-    var marker = new google.maps.Marker({
-        position: {lat: 0, lng: 0},
-        map: map,
-        title: ''
-    });
     var lastWrittingInputDiv;
     jQuery(document).ready(function () {
+        // On affiche une fenêtre poussant l'utilisateur a activer sa géolocalisation
 
+        var marker = new google.maps.Marker({
+            position: {lat: 0, lng: 0},
+            map: map,
+            title: ''
+        });
 
         function maPosition(position) {
             var infopos = "Position déterminée :\n";
@@ -95,6 +119,7 @@
 
         function erreurPosition(error) {
             var info = "Erreur lors de la géolocalisation : ";
+            $('#myModal').modal();
             switch (error.code) {
                 case error.TIMEOUT:
                     info += "Timeout !";
@@ -114,8 +139,9 @@
         $('#localizemenow, .btn-localize').on('click', function () {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, {enableHighAccuracy: true});
+
             } else {
-                // Pas de support, proposer une alternative ?
+                $('#myModal').modal();
             }
         });
 
@@ -366,45 +392,78 @@
             }, 300);
         });
 
+        $('#navbar').on('hidden.bs.collapse', function () {
+            console.log("Collapsed !");
+        });
 
-        // END OF JQUERY
-    });
+        $('#showmap_from').on('click', function () {
+            lastWrittingInputDiv = "#showmap_from";
+            $('#position-windows').css({"visibility": "visible"});
 
-    $('#showmap_from').on('click', function () {
-        lastWrittingInputDiv = "#showmap_from";
-        $('#position-windows').css({"visibility": "visible"});
-
-        $('#position-windows-input').attr("placeholder", "Où êtes-vous actuellement ?");
-        if ($('#localizeme').val()) {
-            $('#position-windows-input').val($('#localizeme').val());
-        }
-
-        if ($('#position-windows-input').val()) {
-            if ($('#position-windows-input').val() != $('#localizeme').val()) {
-                $('#position-windows-input').val("");
+            $('#position-windows-input').attr("placeholder", "Où êtes-vous actuellement ?");
+            if ($('#localizeme').val()) {
+                $('#position-windows-input').val($('#localizeme').val());
             }
-        }
 
-        $('#position-windows').css({"visibility": "visible"});
-        $('.btn-localize').css({"visibility": "visible"});
-    });
-
-    $('#showmap_to').on('click', function () {
-        lastWrittingInputDiv = "#showmap_to";
-        $('#position-windows-input').attr("placeholder", "Où voulez-vous aller ?");
-        if ($('#position').val()) {
-            $('#position-windows-input').val($('#position').val());
-        }
-
-        if ($('#position-windows-input').val()) {
-            if ($('#position-windows-input').val() != $('#position').val()) {
-                $('#position-windows-input').val("");
+            if ($('#position-windows-input').val()) {
+                if ($('#position-windows-input').val() != $('#localizeme').val()) {
+                    $('#position-windows-input').val("");
+                }
             }
-        }
 
-        $('#position-windows').css({"visibility": "visible"});
-        $('.btn-localize').css({"visibility": "hidden"});
+            $('#position-windows').css({"visibility": "visible"});
+            $('.btn-localize').css({"visibility": "visible"});
+        });
+
+        $('#showmap_to').on('click', function () {
+            lastWrittingInputDiv = "#showmap_to";
+            $('#position-windows-input').attr("placeholder", "Où voulez-vous aller ?");
+            if ($('#position').val()) {
+                $('#position-windows-input').val($('#position').val());
+            }
+
+            if ($('#position-windows-input').val()) {
+                if ($('#position-windows-input').val() != $('#position').val()) {
+                    $('#position-windows-input').val("");
+                }
+            }
+
+            $('#position-windows').css({"visibility": "visible"});
+            $('.btn-localize').css({"visibility": "hidden"});
+        });
+
+        $('#nom_prenom, #email, #message').on('input', function () {
+            if ($('#nom_prenom').val() && $('#email').val() && $('#message').val()) {
+                $('#envoyer').css({"visibility": "visible"});
+            } else {
+                $('#envoyer').css({"visibility": "hidden"});
+            }
+        });
+
+        $('#position-windows-exit').on('click', function () {
+            $('#position-windows').css({"visibility": "hidden"});
+            $('.btn-localize').css({"visibility": "hidden"});
+        });
+
+        // Select all tabs
+        $('.nav-tabs a').click(function () {
+            $(this).tab('show');
+        })
+
+        // Select tab by name
+        $('.nav-tabs a[href="#home"]').tab('show');
+
+        // Select first tab
+        $('.nav-tabs a:first').tab('show');
+
+        // Select last tab
+        $('.nav-tabs a:last').tab('show');
+
+        // Select fourth tab (zero-based)
+        $('.nav-tabs li:eq(3) a').tab('show');
+
     });
+
 
     function loadingAnimation(lastWrittingInputDiv) {
         if (lastWrittingInputDiv == "#position") {
@@ -466,39 +525,8 @@
     }
 
 
-    $('#nom_prenom, #email, #message').on('input', function () {
-        if ($('#nom_prenom').val() && $('#email').val() && $('#message').val()) {
-            $('#envoyer').css({"visibility": "visible"});
-        } else {
-            $('#envoyer').css({"visibility": "hidden"});
-        }
-    });
-
-    $('#position-windows-exit').on('click', function () {
-        $('#position-windows').css({"visibility": "hidden"});
-        $('.btn-localize').css({"visibility": "hidden"});
-    });
-
     function addEntries(data) {
     }
-
-
-    // Select all tabs
-    $('.nav-tabs a').click(function () {
-        $(this).tab('show');
-    })
-
-    // Select tab by name
-    $('.nav-tabs a[href="#home"]').tab('show');
-
-    // Select first tab
-    $('.nav-tabs a:first').tab('show');
-
-    // Select last tab
-    $('.nav-tabs a:last').tab('show');
-
-    // Select fourth tab (zero-based)
-    $('.nav-tabs li:eq(3) a').tab('show');
 
 </script>
 

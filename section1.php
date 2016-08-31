@@ -1,5 +1,4 @@
 <div class="section" id="section1">
-
     <div id="position-windows">
         <div id="position-windows-subnav">
             <div class="container">
@@ -10,11 +9,13 @@
                 </div>
             </div>
         </div>
+
         <div id="map-map"></div>
         <div class="btn-localize">
             <a href="#" id="localizemenow">Me localiser</a>
         </div>
     </div>
+
     <div id="subnav">
         <div class="container" style="height: 100%;">
             <div class="col-md-5 col-sm-5 col-xs-5" id="where_go">
@@ -38,15 +39,17 @@
                 <div class="flaticon-24-hour-service flaticon"></div>
                 <h4 class="subtitle">Service 24H/24</h4>
             </div>
-            <div class="col-md-5 col-sm-5 col-xs-5" id="where_go">
+            <div class="col-md-5 col-sm-5 col-xs-5">
                 <div class="flaticon-sale flaticon"></div>
                 <h4 class="subtitle">Tarifs spéciaux</h4>
             </div>
 
         </div>
     </div>
+
     <div class="col-md-12 titles-container">
         <div class="container">
+            <div class="bulle animated bounceIn hidden-xs"><img src="css/img/good_2.png" alt="Service de qualité"><h4>Service de qualité</h4></div>
             <h1>Taxi Doudou</h1>
             <div class="postiion-container">
                 <h3 class="col-md-12 no-padding">Choisissez votre destination</h3>
@@ -74,7 +77,7 @@
                         <div class="form-group col-md-3 col-sm-12 col-xs-12">
                             <label class="sr-only" for="exampleInputAmount">Véhicules</label>
                             <div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_vehicles">
-                                <button type="text" class="form-control" id="vehicles" type="button">
+                                <button class="form-control" id="vehicles" type="button">
                                     <span class="text">Véhicules</span>
                                     <div class="addon" style="float: right">
                                         <span class="flaticon-minibus"></span>

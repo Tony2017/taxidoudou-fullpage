@@ -5,6 +5,7 @@ $(document).ready(function() {
 				navigation: false,
 				navigationPosition: 'right',
 				navigationTooltips: ['Première page', 'Deuxième page', 'Troisième page', 'Quatrième page'], //hover text of the menu
+				normalScrollElements: '#map-map',
 				afterRender: function () {
 			        //Start the whole shabang when DOM and APIs are ready by calling initialize()
 			        initMap();
