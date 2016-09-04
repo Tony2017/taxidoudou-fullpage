@@ -1,6 +1,14 @@
+<?php session_start();
+require('Classes.php');
+$user = new User();
+$_SESSION['user'] = serialize($user);
+$race = new Race();
+$_SESSION['race'] = serialize($race);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php include("head.php"); ?>
+
 <body>
 <header>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -210,18 +218,33 @@
             $("#vehicles span[class='text']").text("Taxi (7 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
+            $.getJSON("query.php?type=vehicle&vehicle_ref=2", function (data) {
+                m_posData = data;
+            }).done(function () {
+            }).fail(function () {
+            });
         });
 
         $("#minibus_vehicle").click(function () {
             $("#vehicles span[class='text']").text("Taxibus (15 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
+            $.getJSON("query.php?type=vehicle&vehicle_ref=1", function (data) {
+                m_posData = data;
+            }).done(function () {
+            }).fail(function () {
+            });
         });
 
         $("#taxi_mercedes").click(function () {
             $("#vehicles span[class='text']").text("Taxi (5 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
+            $.getJSON("query.php?type=vehicle&vehicle_ref=3", function (data) {
+                m_posData = data;
+            }).done(function () {
+            }).fail(function () {
+            });
         });
 
 
@@ -256,6 +279,20 @@
             var m_posData;
             var place_id = $(this).data("placeid");
             var m_posName;
+            var start_or_end;
+            if (lastWrittingInputDiv == "#position") {
+                start_or_end = "start";
+            } else if (lastWrittingInputDiv == "#localizeme") {
+                start_or_end = "end";
+            }
+            $.getJSON("query.php?type=address&place_id=" + place_id + "&start_or_end=" + start_or_end, function (data) {
+                m_posData = data;
+            })
+                .done(function () {
+                })
+                .fail(function () {
+
+                });
             $.getJSON("query.php?type=details&place_id=" + place_id, function (data) {
                 m_posData = data;
             })
@@ -463,7 +500,8 @@
         // Select fourth tab (zero-based)
         $('.nav-tabs li:eq(3) a').tab('show');
 
-    });
+    })
+    ;
 
 
     function loadingAnimation(lastWrittingInputDiv) {
