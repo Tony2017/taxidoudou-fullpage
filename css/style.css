@@ -59,6 +59,10 @@
 	color: black;
 }
 
+#section4{
+	background-color: #E53E33;
+}
+
 
 /* irst section components style
 * --------------------------------------- */
@@ -570,7 +574,7 @@
 .copyright{
 	width: 100%;
 	padding: 4vh;
-	background-color: #E53E33;
+	background-color: #000000;
 	text-align: right;
 	color: white;
 }

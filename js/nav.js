@@ -1,7 +1,7 @@
 $(document).ready(function() {
 		$('#fullpage').fullpage({
 				anchors: ['premierePage', 'deuxiemePage', 'troisiemePage', 'quatriemePage'], //anchor names for the menu
-				sectionsColor: ['#1E1E1E', 'white', 'white', '#E9534B'], //bgcolor of the section
+				sectionsColor: [], //bgcolor of the section
 				navigation: false,
 				navigationPosition: 'right',
 				navigationTooltips: ['Première page', 'Deuxième page', 'Troisième page', 'Quatrième page'], //hover text of the menu
