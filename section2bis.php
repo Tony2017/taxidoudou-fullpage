@@ -1,7 +1,7 @@
 <div class="section" id="section2">
     <div class="container">
-        <div class="row">
-            <section class="col-md-4">
+        
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/taxi.png" alt="Taxi de luxe"/>
@@ -11,7 +11,7 @@
                         Profitez du confort de nos différents véhicules, pour de courts ou de plus longs trajets.</p>
                 </div>
             </section>
-            <section class="col-md-4">
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/bus.png" alt="Taxi de luxe"/>
@@ -22,7 +22,7 @@
                         musique, etc.</p>
                 </div>
             </section>
-            <section class="col-md-4">
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/remorque.png" alt="Taxi de luxe"/>
@@ -32,10 +32,8 @@
                         Profitez de notre remorque d'une capacité jusqu'à 1'600 KG.<br/><br/></p>
                 </div>
             </section>
-        </div>
-
-        <div class="row">
-            <section class="col-md-4">
+        
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/price.png" alt="Taxi de luxe"/>
@@ -45,7 +43,7 @@
                         jeunesse, excursions traditionnelles, personnes âgées etc..</p>
                 </div>
             </section>
-            <section class="col-md-4">
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/avion.png" alt="Taxi de luxe"/>
@@ -55,7 +53,7 @@
                         connues</p>
                 </div>
             </section>
-            <section class="col-md-4">
+            <section class="col-md-4 col-sm-4 col-xs-6">
                 <div class="box-services">
                     <figure class="box-img">
                         <img src="css/img/24_24.png" alt="Taxi de luxe"/>
@@ -64,6 +62,6 @@
                     <p>Taxis disponibles 24 heure sur 24 et 7 jours sur 7<br/>Disponible en tout temps</p>
                 </div>
             </section>
-        </div>
+        
     </div>
 </div>
