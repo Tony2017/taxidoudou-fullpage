@@ -39,11 +39,27 @@ class Race
     }
 
     /**
+     * @return mixed
+     */
+    public function getStartAddress()
+    {
+        return $this->_start_address;
+    }
+
+    /**
      * @param mixed $end_address
      */
     public function setEndAddress($end_address)
     {
         $this->_end_address = $end_address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEndAddress()
+    {
+        return $this->_end_address;
     }
 
     /**
@@ -63,11 +79,28 @@ class Race
     }
 
     /**
+     * @return mixed
+     */
+    public function getDistanceKm()
+    {
+        return $this->_distance_km;
+    }
+
+
+    /**
      * @param mixed $price_course
      */
     public function setPriceCourse($price_course)
     {
         $this->_price_course = $price_course;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPriceCourse()
+    {
+        return $this->_price_course;
     }
 }
 
@@ -84,7 +117,7 @@ class MapRequest
      */
     public function getPlaces($place)
     {
-        $this->_link = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' . $place . '&components=country:ch&location=0,0&radius=20000000&language=fr_CH&key=AIzaSyDjYfntYI75cqHJlntIO6w8uZKQooRnaIQ';
+        $this->_link = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' . $place . '&components=country:ch&location=0,0&radius=&location=0,0&radius=20000000&types=geocode&language=fr&key=AIzaSyDjYfntYI75cqHJlntIO6w8uZKQooRnaIQ';
 
         $this->_json = $this->getRequestResponse($this->_link);
 
@@ -118,7 +151,7 @@ class MapRequest
         $lat = $this->_obj["geometry"]["location"]["lat"];
         $lng = $this->_obj["geometry"]["location"]["lng"];
 
-        $encoded_array[] = array("lat" => $lat, "lng" => $lng, "formatted_address" => $this->_obj["formatted_address"]);
+        $encoded_array[] = array("lat" => $lat, "lng" => $lng, "formatted_address" => $this->_obj["formatted_address"], "name" => $this->_obj["name"]);
 
         return $encoded_array;
     }
@@ -135,7 +168,7 @@ class MapRequest
 
         $this->_obj = json_decode($this->_json, true)["results"];
 
-        $encoded_array[] = array("formatted_address" => $this->_obj[0]["formatted_address"]);
+        $encoded_array[] = array("formatted_address" => $this->_obj[0]["formatted_address"], "place_id" => $this->_obj[0]["place_id"]);
 
         return $encoded_array;
     }

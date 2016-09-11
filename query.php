@@ -31,16 +31,24 @@ if (isOk("place", $required_arg)) {
     $lat = $place_details[0]["lat"];
     $lng = $place_details[0]["lng"];
     $formatted_address = $place_details[0]["formatted_address"];
+    $name = $place_details[0]["name"];
 
-    if ($_GET['start_or_end'] === "start") {
+    // Due to some name localisation problem, we need to check if the formatted_address equals to Switzerland. If yes, we prefer to take the name result
+    if ($formatted_address === "Switzerland")
+        $formatted_address = $name;
+
+    if ($_GET['start_or_end'] == "start") {
         $start_address = Array("start_formatted_address" => $formatted_address, "lat" => $lat, "lng" => $lng);
-        $race->setStartAddress($start_address);
-    } else if ($_GET['start_or_end'] === "end") {
+        $race->setStartAddress($start_address);;
+    } else if ($_GET['start_or_end'] == "end") {
         $end_address = Array("end_formatted_address" => $formatted_address, "lat" => $lat, "lng" => $lng);
-        $race->setStartAddress($end_address);
+        $race->setEndAddress($end_address);
     }
+
+    $_SESSION['race'] = serialize($race);
 } else if (isOk("vehicle", $required_arg)) {
     $race->setVehicle($_GET['vehicle_ref']);
+    $_SESSION['race'] = serialize($race);
 } else {
     echo "ERROR";
 }

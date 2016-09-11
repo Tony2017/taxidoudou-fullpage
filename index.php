@@ -1,9 +1,13 @@
 <?php session_start();
 require('Classes.php');
-$user = new User();
-$_SESSION['user'] = serialize($user);
-$race = new Race();
-$_SESSION['race'] = serialize($race);
+if (!isset($_SESSION['user'])) {
+    $user = new User();
+    $_SESSION['user'] = serialize($user);
+}
+if (!isset($_SESSION['race'])) {
+    $race = new Race();
+    $_SESSION['race'] = serialize($race);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -118,7 +122,11 @@ $_SESSION['race'] = serialize($race);
 
                     $('#position-windows-input').val(obj[0].formatted_address);
                     $('#localizeme').val(obj[0].formatted_address);
-                    console.log("réussi");
+                    $.getJSON("query.php?type=address&place_id=" + obj[0].place_id + "&start_or_end=start", function (data) {
+                        m_posData = data;
+                    }).done(function () {
+                    }).fail(function () {
+                    });
                 })
                 .fail(function () {
 
@@ -279,19 +287,17 @@ $_SESSION['race'] = serialize($race);
             var place_id = $(this).data("placeid");
             var m_posName;
             var start_or_end;
-            if (lastWrittingInputDiv == "#position") {
-                start_or_end = "start";
-            } else if (lastWrittingInputDiv == "#localizeme") {
+            if ((lastWrittingInputDiv == "#position") || (lastWrittingInputDiv == "#position-windows-input" && $('#position-windows-input').attr("placeholder") == "Où voulez-vous aller ?")) {
                 start_or_end = "end";
+            } else if ((lastWrittingInputDiv == "#localizeme") || (lastWrittingInputDiv == "#position-windows-input" && $('#position-windows-input').attr("placeholder") == "Où êtes-vous actuellement ?")) {
+                start_or_end = "start";
             }
+
             $.getJSON("query.php?type=address&place_id=" + place_id + "&start_or_end=" + start_or_end, function (data) {
                 m_posData = data;
-            })
-                .done(function () {
-                })
-                .fail(function () {
-
-                });
+            }).done(function () {
+            }).fail(function () {
+            });
             $.getJSON("query.php?type=details&place_id=" + place_id, function (data) {
                 m_posData = data;
             })
@@ -420,6 +426,8 @@ $_SESSION['race'] = serialize($race);
                         $(".popup-position").removeClass("deactivated");
                         $(".popup-position").removeClass("fadeOut animated");
                         $(".popup-position").addClass("fadeIn animated");
+
+
                     })
                     .fail(function () {
                         $(".popup-position").empty();
