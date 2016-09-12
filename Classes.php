@@ -29,7 +29,15 @@ class Race
     private $_vehicle;
     private $_distance_km;
     private $_price_course;
+    private $_areAllParametersSet;
 
+    /**
+     * @return mixed
+     */
+    public function getAreAllParametersSet()
+    {
+        return ($this->_start_address && $this->_end_address && $this->_vehicle);
+    }
     /**
      * @param mixed $start_address
      */

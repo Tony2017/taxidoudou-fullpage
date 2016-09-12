@@ -8,6 +8,8 @@ if (!isset($_SESSION['race'])) {
     $race = new Race();
     $_SESSION['race'] = serialize($race);
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
