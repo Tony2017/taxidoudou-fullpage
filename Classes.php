@@ -133,6 +133,8 @@ class MapRequest
 
         $numb_of_arrays = count($this->_obj);
 
+        if($numb_of_arrays == 0)return;
+
         for ($i = 0; $i < $numb_of_arrays; $i++) {
             $lat = -1;
             $lng = -1;

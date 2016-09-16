@@ -43,10 +43,10 @@ if (!isset($_SESSION['race'])) {
                             href="#" style="display: inline-block;">079 846 29 84</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li class="active hidden-sm"><a href="#premierePage">Accueil</a></li>
-                    <li><a href="#deuxiemePage">Prestations</a></li>
-                    <li><a href="#troisiemePage">Nos véhicules</a></li>
-                    <li><a href="#quatriemePage">Nous contacter</a></li>
+                    <li class="active hidden-sm"><a href="#Accueil">Accueil</a></li>
+                    <li><a href="#Prestations">Prestations</a></li>
+                    <li><a href="#Vehicules">Nos véhicules</a></li>
+                    <li><a href="#Contact">Nous contacter</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right hidden-sm">
                     <li><a href="#" style="display: inline-block; padding: 0px; padding-top: 20px;"
@@ -81,11 +81,11 @@ if (!isset($_SESSION['race'])) {
     <?php include("section1.php"); ?>
     <?php include("section2bis.php"); ?>
     <?php include("section3.php"); ?>
-    <?php include("section4.php"); ?>
+    <?php include("section5.php"); ?>
 </section>
 
 <script>
-    var map;
+    var map, mapLocal;
     var lastWrittingInputDiv;
     jQuery(document).ready(function () {
         // On affiche une fenêtre poussant l'utilisateur a activer sa géolocalisation
@@ -557,7 +557,7 @@ if (!isset($_SESSION['race'])) {
             "stylers": [{"visibility": "off"}]
         }, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#b4d4e1"}, {"visibility": "on"}]}];
 
-        var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+        var styledMap = new google.maps.StyledMapType(styles, {name: "TaxiDoudou Map"});
 
         map = new google.maps.Map(document.getElementById('map-map'), {
             zoom: 8,
@@ -565,11 +565,24 @@ if (!isset($_SESSION['race'])) {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
-
         //Associate the styled map with the MapTypeId and set it to display.
         map.mapTypes.set('map_style', styledMap);
         map.setMapTypeId('map_style');
 
+        mapLocal = new google.maps.Map(document.getElementById('map-local'), {
+            zoom: 11,
+            center: new google.maps.LatLng(46.7438815, 6.8156835),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: 46.844846, lng: 6.84278},
+            map: mapLocal,
+            title: 'TaxiDoudou'
+        });
+
+        mapLocal.mapTypes.set('map_style2', styledMap);
+        mapLocal.setMapTypeId('map_style2');
     }
 
 

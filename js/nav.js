@@ -1,10 +1,8 @@
 $(document).ready(function() {
 		$('#fullpage').fullpage({
-				anchors: ['premierePage', 'deuxiemePage', 'troisiemePage', 'quatriemePage'], //anchor names for the menu
-				sectionsColor: [], //bgcolor of the section
+				anchors: ['Accueil', 'Prestations', 'Vehicules', 'Contact'], //anchor names for the menu
 				navigation: false,
 				navigationPosition: 'right',
-				navigationTooltips: ['Première page', 'Deuxième page', 'Troisième page', 'Quatrième page'], //hover text of the menu
 				normalScrollElements: '#map-map',
 				afterRender: function () {
 			        //Start the whole shabang when DOM and APIs are ready by calling initialize()
@@ -14,7 +12,7 @@ $(document).ready(function() {
 					$( ".nav.navbar-nav > li.active" ).removeClass('active');
 					$( ".nav.navbar-nav > li" ).eq( nextIndex ).addClass('active');
 
-					if(nextIndex == 4){
+					if(nextIndex == 5){
 						$('nav').addClass('deactivated');
 					}else{
 						$('nav').removeClass('deactivated');
