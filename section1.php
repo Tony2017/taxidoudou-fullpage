@@ -49,7 +49,8 @@
 
     <div class="col-md-12 titles-container">
         <div class="container">
-            <div class="bulle animated bounceIn hidden-xs"><img src="css/img/good_2.png" alt="Service de qualité"><h4>Service de qualité</h4></div>
+            <div class="bulle animated bounceIn hidden-xs"><img src="css/img/good_2.png" alt="Service de qualité"><h4>
+                    Service de qualité</h4></div>
             <h1>Taxi Doudou</h1>
             <div class="postiion-container">
                 <h3 class="col-md-12 no-padding">Choisissez votre destination</h3>
@@ -59,7 +60,8 @@
                             <label class="sr-only" for="exampleInputAmount">Où voulez-vous aller ?</label>
                             <div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_position">
                                 <input type="text" class="form-control" id="position"
-                                       placeholder="Où voulez-vous aller ?">
+                                       placeholder="Où voulez-vous aller ?"
+                                       value="<?php echo $race->getEndAddress()["end_formatted_address"]; ?>">
                                 <div class="input-group-addon addon">
                                     <a href="#" id="showmap_to"><span class="flaticon-location-pin"></span></a>
                                 </div>
@@ -68,7 +70,8 @@
                         <div class="form-group col-md-3 col-sm-12 col-xs-12">
                             <label class="sr-only" for="exampleInputAmount">Où êtes-vous ?</label>
                             <div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_localizeme">
-                                <input type="text" class="form-control" id="localizeme" placeholder="Où êtes-vous ?">
+                                <input type="text" class="form-control" id="localizeme" placeholder="Où êtes-vous ?"
+                                       value="<?php echo $race->getStartAddress()["start_formatted_address"]; ?>">
                                 <div class="input-group-addon addon">
                                     <a href="#" id="showmap_from"><span class="flaticon-location-pin"></span></a>
                                 </div>
@@ -78,7 +81,7 @@
                             <label class="sr-only" for="exampleInputAmount">Véhicules</label>
                             <div class="input-group col-md-12 col-sm-12 col-xs-12" id="input_vehicles">
                                 <button class="form-control" id="vehicles" type="button">
-                                    <span class="text">Véhicules</span>
+                                    <span class="text"><?php echo $race->getTextVehicle(); ?></span>
                                     <div class="addon" style="float: right">
                                         <span class="flaticon-minibus"></span>
                                     </div>
@@ -86,7 +89,10 @@
                             </div>
                         </div>
                         <div class="search-button col-md-2 col-sm-12 col-xs-12">
-                            <button class="btn btn-go" type="button" disabled>Calculer le prix</button>
+                            <button class="btn btn-go"
+                                    type="button" <?php echo ($race->getAreAllParametersSet() == false) ? 'disabled' : ''; ?>
+                                    onclick="window.location.href='request.php'">Calculer le prix
+                            </button>
                         </div>
                     </div>
                 </div>

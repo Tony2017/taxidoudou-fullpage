@@ -29,7 +29,6 @@ class Race
     private $_vehicle;
     private $_distance_km;
     private $_price_course;
-    private $_areAllParametersSet;
 
     /**
      * @return mixed
@@ -38,6 +37,7 @@ class Race
     {
         return ($this->_start_address && $this->_end_address && $this->_vehicle);
     }
+
     /**
      * @param mixed $start_address
      */
@@ -76,6 +76,25 @@ class Race
     public function setVehicle($vehicle)
     {
         $this->_vehicle = $vehicle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVehicle()
+    {
+        return $this->_vehicle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTextVehicle()
+    {
+        if ($this->_vehicle != null)
+            return Array("TaxiBus (15 places)", "TaxiTouran (7 places)", "TaxiMercedes (5 places)")[$this->_vehicle - 1];
+        else
+            return "Véhicules";
     }
 
     /**
@@ -133,7 +152,7 @@ class MapRequest
 
         $numb_of_arrays = count($this->_obj);
 
-        if($numb_of_arrays == 0)return;
+        if ($numb_of_arrays == 0) return;
 
         for ($i = 0; $i < $numb_of_arrays; $i++) {
             $lat = -1;

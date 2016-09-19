@@ -1,14 +1,20 @@
 <?php session_start();
 require('Classes.php');
+$user = null;
+$race = null;
+
 if (!isset($_SESSION['user'])) {
     $user = new User();
     $_SESSION['user'] = serialize($user);
+} else {
+    $user = unserialize($_SESSION['user']);
 }
 if (!isset($_SESSION['race'])) {
     $race = new Race();
     $_SESSION['race'] = serialize($race);
+} else {
+    $race = unserialize($_SESSION['race']);
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -207,6 +213,14 @@ if (!isset($_SESSION['race'])) {
                 $(".popup-position").removeClass("deactivated");
         });
 
+        $("#position").on('keydown', function (event) {
+            var key = event.keyCode || event.charCode;
+
+            if (key == 8 || key == 46) {
+                $('.btn-go').attr("disabled", "true");
+            }
+        });
+
         $("#localizeme").click(function () {
             if (lastWrittingInputDiv != "#localizeme") {
                 return;
@@ -223,14 +237,32 @@ if (!isset($_SESSION['race'])) {
                 $(".popup-position").removeClass("deactivated");
         });
 
+        $("#localizeme").on('keydown', function (event) {
+            var key = event.keyCode || event.charCode;
+
+            if (key == 8 || key == 46) {
+                $('.btn-go').attr("disabled", "true");
+            }
+        });
+
         $("#taxi_vehicle").click(function () {
-            $("#vehicles span[class='text']").text("Taxi (7 places)");
+            $("#vehicles span[class='text']").text("TaxiTouran (7 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
             $.getJSON("query.php?type=vehicle&vehicle_ref=2", function (data) {
                 m_posData = data;
             }).done(function () {
             }).fail(function () {
+            });
+            $.getJSON("query.php?type=parameters&null=1", function (data) {
+                m_posData = data;
+            }).done(function () {
+                console.log(m_posData);
+                if (m_posData == "1") {
+                    $('.btn-go').removeAttr("disabled");
+                } else {
+                    $('.btn-go').attr("disabled", "");
+                }
             });
         });
 
@@ -243,10 +275,20 @@ if (!isset($_SESSION['race'])) {
             }).done(function () {
             }).fail(function () {
             });
+            $.getJSON("query.php?type=parameters&null=1", function (data) {
+                m_posData = data;
+            }).done(function () {
+                console.log(m_posData);
+                if (m_posData == "1") {
+                    $('.btn-go').removeAttr("disabled");
+                } else {
+                    $('.btn-go').attr("disabled", "");
+                }
+            });
         });
 
         $("#taxi_mercedes").click(function () {
-            $("#vehicles span[class='text']").text("Taxi (5 places)");
+            $("#vehicles span[class='text']").text("TaxiMercedes (5 places)");
             $(".popup-vehicles").addClass("deactivated");
             $(".popup-vehicles").removeClass("fadeOut animated");
             $.getJSON("query.php?type=vehicle&vehicle_ref=3", function (data) {
@@ -254,8 +296,17 @@ if (!isset($_SESSION['race'])) {
             }).done(function () {
             }).fail(function () {
             });
+            $.getJSON("query.php?type=parameters&null=1", function (data) {
+                m_posData = data;
+            }).done(function () {
+                console.log(m_posData);
+                if (m_posData == "1") {
+                    $('.btn-go').removeAttr("disabled");
+                } else {
+                    $('.btn-go').attr("disabled", "");
+                }
+            });
         });
-
 
         $(document).mouseup(function (e) {
             var container = $("#vehicle, .popup-vehicles, #position, .popup-position");
@@ -299,6 +350,16 @@ if (!isset($_SESSION['race'])) {
                 m_posData = data;
             }).done(function () {
             }).fail(function () {
+            });
+            $.getJSON("query.php?type=parameters&null=1", function (data) {
+                m_posData = data;
+            }).done(function () {
+                console.log(m_posData);
+                if (m_posData == "1") {
+                    $('.btn-go').removeAttr("disabled");
+                } else {
+                    $('.btn-go').attr("disabled", "");
+                }
             });
             $.getJSON("query.php?type=details&place_id=" + place_id, function (data) {
                 m_posData = data;
@@ -509,6 +570,19 @@ if (!isset($_SESSION['race'])) {
         // Select fourth tab (zero-based)
         $('.nav-tabs li:eq(3) a').tab('show');
 
+
+        $(".img-min").on("click", function () {
+                console.log("IN");
+                $(this).addClass("activeLast");
+                $($(this).parent().data("parentimg")).attr("src", $(this).find("img").data("bigimg"));
+            }
+        );
+
+        /*$(document).on("mouseout", ".img-min.activeLast", function () {
+            console.log("OUT");
+            $(this).removeClass("activeLast");
+            $($(this).parent().data("parentimg")).attr("src", $($(this).parent().data("parentimg")).data("defaultimg"));
+        });*/
     })
     ;
 
@@ -585,9 +659,6 @@ if (!isset($_SESSION['race'])) {
         mapLocal.setMapTypeId('map_style2');
     }
 
-
-    function addEntries(data) {
-    }
 
 </script>
 

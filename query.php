@@ -16,7 +16,7 @@ $required_arg = Array(
     "geocoding" => Array("latlng"),
     "address" => Array("place_id", "start_or_end"),
     "vehicle" => Array("vehicle_ref"),
-    "parameters" => Array("test"));
+    "parameters" => Array("null"));
 
 
 if (isOk("place", $required_arg)) {
@@ -50,8 +50,8 @@ if (isOk("place", $required_arg)) {
 } else if (isOk("vehicle", $required_arg)) {
     $race->setVehicle($_GET['vehicle_ref']);
     $_SESSION['race'] = serialize($race);
-} else if(isOk("parameters", $required_arg)){
-    echo json_encode($race->getAreAllParametersSet());
+} else if (isOk("parameters", $required_arg)) {
+    echo ($race->getAreAllParametersSet() === true) ? '1' : '0';
 } else {
     echo "ERROR";
 }
