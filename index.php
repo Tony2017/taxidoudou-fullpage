@@ -1,7 +1,12 @@
-<?php session_start();
-require('Classes.php');
-$user = null;
-$race = null;
+<?php
+session_start();
+ini_set('display_errors', 1);+
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require("Classes.php");
+
+$user;
+$race;
 
 if (!isset($_SESSION['user'])) {
     $user = new User();
@@ -140,35 +145,6 @@ if (!isset($_SESSION['race'])) {
 
                 });
         }
-
-        function erreurPosition(error) {
-            var info = "Erreur lors de la géolocalisation : ";
-            $('#myModal').modal();
-            switch (error.code) {
-                case error.TIMEOUT:
-                    info += "Timeout !";
-                    break;
-                case error.PERMISSION_DENIED:
-                    info += "Vous n’avez pas donné la permission";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    info += "La position n’a pu être déterminée";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    info += "Erreur inconnue";
-                    break;
-            }
-        }
-
-        $('#localizemenow, .btn-localize').on('click', function () {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, {enableHighAccuracy: true});
-
-            } else {
-                $('#myModal').modal();
-            }
-        });
-
 
         var delay = (function () {
             var timer = 0;
@@ -579,10 +555,12 @@ if (!isset($_SESSION['race'])) {
         );
 
         /*$(document).on("mouseout", ".img-min.activeLast", function () {
-            console.log("OUT");
-            $(this).removeClass("activeLast");
-            $($(this).parent().data("parentimg")).attr("src", $($(this).parent().data("parentimg")).data("defaultimg"));
-        });*/
+         console.log("OUT");
+         $(this).removeClass("activeLast");
+         $($(this).parent().data("parentimg")).attr("src", $($(this).parent().data("parentimg")).data("defaultimg"));
+         });*/
+
+
     })
     ;
 
@@ -660,8 +638,38 @@ if (!isset($_SESSION['race'])) {
     }
 
 
+    function erreurPosition(error) {
+        var info = "Erreur lors de la géolocalisation : ";
+        $('#myModal').modal();
+        switch (error.code) {
+            case error.TIMEOUT:
+                info += "Timeout !";
+                break;
+            case error.PERMISSION_DENIED:
+                info += "Vous n’avez pas donné la permission";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                info += "La position n’a pu être déterminée";
+                break;
+            case error.UNKNOWN_ERROR:
+                info += "Erreur inconnue";
+                break;
+        }
+    }
+
+    $('#localizemenow, .btn-localize').on('click', function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, {enableHighAccuracy: true});
+
+        } else {
+            $('#myModal').modal();
+        }
+    });
+
+
 </script>
 
+<script type="text/javascript" src="js/nav.js"></script>
 
 </body>
 </html>
