@@ -91,7 +91,7 @@
                         <div class="search-button col-md-2 col-sm-12 col-xs-12">
                             <button class="btn btn-go"
                                     type="button" <?php echo ($race->getAreAllParametersSet() == false) ? 'disabled' : ''; ?>
-                                    onclick="window.location.href='request.php'">Calculer le prix
+                                    onclick="window.location.href='request.php'">Calculer
                             </button>
                         </div>
                     </div>

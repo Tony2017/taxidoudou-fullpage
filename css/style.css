@@ -72,6 +72,12 @@
     background: url("img/city-cars-traffic-lights.jpg") no-repeat fixed center;
 }
 
+#request_section{
+    background: url("img/city-cars-traffic-lights.jpg") repeat;
+    width: 100%;
+    height: 105vh;
+}
+
 #subnav {
     display: flex;
     background-color: white;
@@ -642,14 +648,13 @@
 .map-location {
     display: inline-block;
     height: 100%;
-    width: 60%;
-    float: left;
+    width: 100%;
     padding: 3vh;
 }
 
 .map-location .pos-text {
     display: inline-block;
-    width: 15%;
+    width: 12%;
     height: 20%;
     font-size: 4vh;
     float: left;

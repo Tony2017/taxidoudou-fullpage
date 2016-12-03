@@ -107,44 +107,7 @@ if (!isset($_SESSION['race'])) {
             title: ''
         });
 
-        function maPosition(position) {
-            var infopos = "Position déterminée :\n";
-            infopos += "Latitude : " + position.coords.latitude + "\n";
-            infopos += "Longitude: " + position.coords.longitude + "\n";
-            infopos += "Altitude : " + position.coords.altitude + "\n";
-            console.log(infopos);
-            map.setCenter({
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            });
 
-            map.setZoom(14);
-            var pos = {lat: position.coords.latitude, lng: position.coords.longitude};
-            marker.setMap(null);
-            marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                title: ''
-            });
-
-            $.getJSON("query.php?type=geocoding&latlng=" + pos.lat + ',' + pos.lng, function (data) {
-                m_posName = data;
-            })
-                .done(function () {
-                    var obj = m_posName;
-
-                    $('#position-windows-input').val(obj[0].formatted_address);
-                    $('#localizeme').val(obj[0].formatted_address);
-                    $.getJSON("query.php?type=address&place_id=" + obj[0].place_id + "&start_or_end=start", function (data) {
-                        m_posData = data;
-                    }).done(function () {
-                    }).fail(function () {
-                    });
-                })
-                .fail(function () {
-
-                });
-        }
 
         var delay = (function () {
             var timer = 0;
@@ -561,20 +524,19 @@ if (!isset($_SESSION['race'])) {
          });*/
 
 
+
+        function loadingAnimation(lastWrittingInputDiv) {
+            if (lastWrittingInputDiv == "#position") {
+                $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility": "hidden"});
+                $("#input_position > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
+            } else if (lastWrittingInputDiv == "#localizeme") {
+                $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility": "hidden"});
+                $("#input_localizeme > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
+            }
+        }
+
     })
     ;
-
-
-    function loadingAnimation(lastWrittingInputDiv) {
-        if (lastWrittingInputDiv == "#position") {
-            $("#input_position > .input-group-addon.addon > #showmap_to").css({"visibility": "hidden"});
-            $("#input_position > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
-        } else if (lastWrittingInputDiv == "#localizeme") {
-            $("#input_localizeme > .input-group-addon.addon > #showmap_from").css({"visibility": "hidden"});
-            $("#input_localizeme > .input-group-addon.addon").append("<div class=\"spinner\"></div>");
-        }
-    }
-
 
     function initMap() {
         //Setup map
@@ -636,35 +598,76 @@ if (!isset($_SESSION['race'])) {
         mapLocal.mapTypes.set('map_style2', styledMap);
         mapLocal.setMapTypeId('map_style2');
     }
-
-
-    function erreurPosition(error) {
-        var info = "Erreur lors de la géolocalisation : ";
-        $('#myModal').modal();
-        switch (error.code) {
-            case error.TIMEOUT:
-                info += "Timeout !";
-                break;
-            case error.PERMISSION_DENIED:
-                info += "Vous n’avez pas donné la permission";
-                break;
-            case error.POSITION_UNAVAILABLE:
-                info += "La position n’a pu être déterminée";
-                break;
-            case error.UNKNOWN_ERROR:
-                info += "Erreur inconnue";
-                break;
+        function erreurPosition(error) {
+            var info = "Erreur lors de la géolocalisation : ";
+            $('#myModal').modal();
+            switch (error.code) {
+                case error.TIMEOUT:
+                    info += "Timeout !";
+                    break;
+                case error.PERMISSION_DENIED:
+                    info += "Vous n’avez pas donné la permission";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    info += "La position n’a pu être déterminée";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    info += "Erreur inconnue";
+                    break;
+            }
         }
+
+        $('#localizemenow, .btn-localize').on('click', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, {enableHighAccuracy: true});
+
+            } else {
+                $('#myModal').modal();
+            }
+        });
+
+    function maPosition(position) {
+        var infopos = "Position déterminée :\n";
+        infopos += "Latitude : " + position.coords.latitude + "\n";
+        infopos += "Longitude: " + position.coords.longitude + "\n";
+        infopos += "Altitude : " + position.coords.altitude + "\n";
+        console.log(infopos);
+        map.setCenter({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        });
+
+        map.setZoom(14);
+        var pos = {lat: position.coords.latitude, lng: position.coords.longitude};
+        marker.setMap(null);
+        marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: ''
+        });
+
+        $.getJSON("query.php?type=geocoding&latlng=" + pos.lat + ',' + pos.lng, function (data) {
+            m_posName = data;
+        })
+            .done(function () {
+                var obj = m_posName;
+
+                $('#position-windows-input').val(obj[0].formatted_address);
+                $('#localizeme').val(obj[0].formatted_address);
+                $.getJSON("query.php?type=address&place_id=" + obj[0].place_id + "&start_or_end=start", function (data) {
+                    m_posData = data;
+                }).done(function () {
+                }).fail(function () {
+                });
+            })
+            .fail(function () {
+
+            });
     }
 
-    $('#localizemenow, .btn-localize').on('click', function () {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(maPosition, erreurPosition, {enableHighAccuracy: true});
 
-        } else {
-            $('#myModal').modal();
-        }
-    });
+
+
 
 
 </script>

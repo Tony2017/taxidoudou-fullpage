@@ -15,43 +15,56 @@ $end_latlng = $race->getEndAddress();
 <?php include("head.php"); ?>
 <body>
 <section id="fullpage">
-    <div class="section" id="section1">
-        <div class="col-md-offset-1 col-md-11 titles-container">
-            <div class="container">
-                <div class="map-infos">
-                    <span class="flaticon-gps flaticon" id="map" style="opacity: 0.7"></span>
-                    <div class="map-location">
-                        <div class="pos-text"><p>De</p></div>
-                        <div class="map-from pos-line"><input type="text" name="from"
-                                                              value="<?php echo $start_latlng["start_formatted_address"] ?>"
-                                                              readonly></div>
-                        <div class="pos-text"><p>A</p></div>
-                        <div class="map-to pos-line"><input type="text" name="to"
-                                                            value="<?php echo $end_latlng["end_formatted_address"] ?>"
-                                                            readonly></div>
-                        <div class="pos-text"><p>Km</p></div>
-                        <div class="map-to pos-line"><input type="text" name="to" id="km"
-                                                            value="<?php echo $race->getDistanceKm() ?>" readonly></div>
-                        <div class="pos-text"><p>Prix</p></div>
-                        <div class="map-to pos-line"><input type="text" name="to"
-                                                            value="<?php echo $race->getPriceCourse(); ?>" readonly>
-                        </div>
+    <div class="section" id="request_section">
+        <div class="col-md-12 titles-container">
+            <div class="map-infos">
+                <div id="map" style="height: 100%; width: 100%;"></div>
+                <div class="map-location">
+                    <div class="pos-text"><p>De</p></div>
+                    <div class="map-from pos-line"><input type="text" name="from"
+                                                          value="<?php echo $start_latlng["start_formatted_address"] ?>"
+                                                          readonly></div>
+                    <div class="pos-text"><p>A</p></div>
+                    <div class="map-to pos-line"><input type="text" name="to"
+                                                        value="<?php echo $end_latlng["end_formatted_address"] ?>"
+                                                        readonly></div>
+                    <div class="pos-text"><p>Km</p></div>
+                    <div class="map-to pos-line"><input type="text" name="to" id="km"
+                                                        value="<?php echo $race->getDistanceKm() ?>" readonly></div>
+                    <?php /*<div class="pos-text"><p>Prix</p></div>
+                    <div class="map-to pos-line"><input type="text" name="to"
+                                                        value="<?php echo $race->getPriceCourse(); ?>" readonly>
                     </div>
-                </div>
-
-            </div>
-            <div class="col-md-12 bottom-box">
-                <div class="container">
-                    <div class="call-container">
-                        <h3 class="no-padding" style="display: inline-block; margin-right: 3vh;">
-                            Pour continuer, appelez-nous au</h3>
-                        <a class="center" href="tel:+41798462984">079 846 29 84</a>
-                    </div>
+                    */?>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-12 bottom-box" style="padding-bottom: 5vh; padding-top: 5vh;">
+            <div class="call-container">
+                <h3 class="no-padding" style="display: inline-block; margin-right: 3vh;">
+                    Pour continuer, appelez-nous au</h3>
+                <a class="center" href="tel:+41798462984">079 846 29 84</a>
+            </div>
+        </div>
+    </div>
 </section>
 <script>
+
+
+    /*function initMap() {
+     var directionsDisplay = new google.maps.DirectionsRenderer;
+     var directionsService = new google.maps.DirectionsService;
+     var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 10,
+     center: {lat: 37.77, lng: -122.447}
+     });
+     directionsDisplay.setMap(map);
+
+     calculateAndDisplayRoute(directionsService, directionsDisplay);
+     }*/
+
+
     function initMap() {
         var styles = [{
             "featureType": "administrative",
@@ -83,39 +96,37 @@ $end_latlng = $race->getEndAddress();
             "stylers": [{"visibility": "off"}]
         }, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#b4d4e1"}, {"visibility": "on"}]}];
 
-        var styledMap = new google.maps.StyledMapType(styles, {name: "TaxiDoudou Map"});
+        var styledMap = new google.maps.StyledMapType(styles, {name: "TaxiDoudou_Map"});
 
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var directionsService = new google.maps.DirectionsService;
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 14,
             center: {lat: 37.77, lng: -122.447},
-            disableDefaultUI: true
+            disableDefaultUI: false
         });
 
         map.mapTypes.set('map_style', styledMap);
         map.setMapTypeId('map_style');
+
         directionsDisplay.setMap(map);
-
-        directionsDisplay.addListener('directions_changed', function () {
-            computeTotalDistance(directionsDisplay.getDirections());
-        });
-
 
         calculateAndDisplayRoute(directionsService, directionsDisplay);
 
     }
 
+
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        console.log("Calculate and display..");
         directionsService.route({
             origin: {lat: <?php echo $start_latlng["lat"] ?>, lng: <?php echo $start_latlng["lng"] ?>},  // Haight.
             destination: {lat: <?php echo $end_latlng["lat"] ?>, lng: <?php echo $end_latlng["lng"] ?>},  // Ocean Beach.
 
             travelMode: google.maps.TravelMode.DRIVING
         }, function (response, status) {
-            console.log(response);
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                computeTotalDistance(response);
             } else {
                 window.alert('Directions request failed due to ' + status);
             }
@@ -132,6 +143,11 @@ $end_latlng = $race->getEndAddress();
         console.log(total);
         document.getElementById('km').value = total.toFixed(1) + ' km';
     }
+
+    initMap();
 </script>
-</body>
+
+
+</script>
+</body >
 </html>
