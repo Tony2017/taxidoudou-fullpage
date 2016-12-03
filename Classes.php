@@ -91,8 +91,9 @@ class Race
      */
     public function getTextVehicle()
     {
+        $array = Array("TaxiBus (15 places)", "TaxiTouran (7 places)", "TaxiMercedes (5 places)");
         if ($this->_vehicle != null)
-            return Array("TaxiBus (15 places)", "TaxiTouran (7 places)", "TaxiMercedes (5 places)")[$this->_vehicle - 1];
+            return $array[(int)$this->_vehicle - 1];
         else
             return "Véhicules";
     }
@@ -213,3 +214,4 @@ class MapRequest
     }
 }
 
+?>

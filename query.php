@@ -2,9 +2,7 @@
 session_start();
 require('Classes.php');
 
-/* Normally this should not happen because 'race' is declared in index.php
-   This can happen only with direct access to the query page */
-if (!isset($_SESSION['race'])) return;
+
 
 $race = unserialize($_SESSION['race']);
 $mapRequest = new MapRequest();
